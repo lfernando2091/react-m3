@@ -1,0 +1,9 @@
+{
+  "name": "react-m3",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/react-m3/src",
+  "projectType": "application",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project react-m3 --web",
+  "targets": {}
+}
