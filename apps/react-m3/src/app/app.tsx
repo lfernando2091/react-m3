@@ -9,7 +9,7 @@ const StyledApp = styled.div`
 export function App() {
   return (
     <StyledApp>
-      <NxWelcome title="react-m3" />
+      <NxWelcome/>
     </StyledApp>
   );
 }

@@ -14,7 +14,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@react-m3/m3": ["libs/m3/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
