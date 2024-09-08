@@ -3,3 +3,5 @@ export { getMUIComponents } from "./lib/utils/MUIComponents";
 export { ThemeSchemeDefault } from "./lib/types/ThemeScheme";
 
 export { M3LightThemeDefault, M3DarkThemeDefault } from "./lib/utils/M3Theme";
+
+export { IconButton } from "./lib/components"

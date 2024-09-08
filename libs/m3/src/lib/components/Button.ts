@@ -11,6 +11,7 @@ declare module '@mui/material/Button' {
     text: true;
     contained: false;
   }
+
   interface ButtonPropsColorOverrides {
     tertiary: true;
     surface: true;
@@ -149,7 +150,8 @@ export const getButton = (theme: Theme): M3Button => {
             backgroundColor: 'transparent',
             color: palette.primary.main,
             boxShadow: theme.shadows[0],
-            padding: '5px 15px',
+            paddingInlineStart: 12,
+            paddingInlineEnd: 12,
             '&.Mui-disabled': {
               color: alpha(palette.onSurface.main, 0.38),
             },

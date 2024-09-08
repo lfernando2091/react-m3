@@ -6,7 +6,7 @@ interface M3CssBaseline {
     styleOverrides?: ComponentsOverrides<Theme>['MuiCssBaseline'];
     variants?: ComponentsVariants['MuiCssBaseline'];
   }
-};
+}
 
 export const getCssBaseline = (_theme: Theme): M3CssBaseline => {
   return {
