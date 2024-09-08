@@ -1,15 +1,15 @@
 import styled from '@emotion/styled';
-
-import NxWelcome from './nx-welcome';
+import { HomePage } from './pages/home/HomePage';
 
 const StyledApp = styled.div`
   // Your style here
+    margin: 3rem;
 `;
 
 export function App() {
   return (
     <StyledApp>
-      <NxWelcome/>
+      <HomePage/>
     </StyledApp>
   );
 }
