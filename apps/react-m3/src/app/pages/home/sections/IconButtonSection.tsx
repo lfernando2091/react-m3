@@ -45,6 +45,53 @@ export const IconButtonSection = () => {
           }}>
           {selected1 ? <SettingIconFilled /> : <SettingIconOutlined />}
         </ToggleButton>
+        <ToggleButton
+          value="check"
+          variant="tonal"
+          selected={selected1}
+          onChange={() => {
+            setSelected1(!selected1);
+          }}>
+          {selected1 ? <SettingIconFilled /> : <SettingIconOutlined />}
+        </ToggleButton>
+        <ToggleButton
+          value="check"
+          variant="outlined"
+          selected={selected1}
+          onChange={() => {
+            setSelected1(!selected1);
+          }}>
+          {selected1 ? <SettingIconFilled /> : <SettingIconOutlined />}
+        </ToggleButton>
+      </Stack>
+      <Stack direction="row" spacing={1}>
+        <ToggleButton
+          disabled
+          value="check"
+          selected={selected1}>
+          <SettingIconOutlined />
+        </ToggleButton>
+        <ToggleButton
+          disabled
+          value="check"
+          variant="filled"
+          selected={selected1}>
+          <SettingIconOutlined />
+        </ToggleButton>
+        <ToggleButton
+          disabled
+          value="check"
+          variant="tonal"
+          selected={selected1}>
+          <SettingIconOutlined />
+        </ToggleButton>
+        <ToggleButton
+          disabled
+          value="check"
+          variant="outlined"
+          selected={selected1}>
+          <SettingIconOutlined />
+        </ToggleButton>
       </Stack>
     </Stack>
   );
