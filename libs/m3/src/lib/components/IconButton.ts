@@ -3,21 +3,34 @@ import { alpha, IconButton as M2IconButton } from '@mui/material';
 import { IconButtonProps as M2IconButtonProps } from '@mui/material/IconButton/IconButton';
 import { getStateLayerColor, StateLayer } from '../utils/StateLayerColor';
 
-declare module '@mui/material/IconButton' {
-
+interface IconButtonProps extends M2IconButtonProps {
+  variant?: 'standard' | 'filled' | 'tonal' | 'outlined';
 }
 
-interface IconButtonProps extends M2IconButtonProps{
-  variant?: string;
-}
-
-export const IconButton  = styled(M2IconButton, {
-  // shouldForwardProp: propName => propName !== 'variant',
-})<IconButtonProps>(({ theme }) => {
+export const IconButton = styled(M2IconButton)<IconButtonProps>(({ theme }) => {
   const { palette } = theme;
   return {
-    // defaultProps: { variant: 'tonal' },
     variants: [
+      {
+        props: ({ variant }: IconButtonProps) => variant === undefined || variant === 'standard',
+        style: {
+          backgroundColor: 'transparent',
+          color: palette.onSurfaceVariant.main,
+          boxShadow: theme.shadows[0],
+          '&.Mui-disabled': {
+            color: alpha(palette.onSurface.main, 0.38),
+          },
+          '&:hover': {
+            backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Hover),
+          },
+          '&:focus': {
+            backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Focus),
+          },
+          '&:active': {
+            backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Press),
+          },
+        }
+      },
       {
         props: { variant: 'filled' },
         style: {
@@ -37,26 +50,6 @@ export const IconButton  = styled(M2IconButton, {
           '&:active': {
             backgroundColor: getStateLayerColor(StateLayer.Press, palette.primary.main, palette.onPrimary.main),
           }
-        }
-      },
-      {
-        props: { variant: 'standard' },
-        style: {
-          backgroundColor: 'transparent',
-          color: palette.onSurfaceVariant.main,
-          boxShadow: theme.shadows[0],
-          '&.Mui-disabled': {
-            color: alpha(palette.onSurface.main, 0.38),
-          },
-          '&:hover': {
-            backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Hover),
-          },
-          '&:focus': {
-            backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Focus),
-          },
-          '&:active': {
-            backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Press),
-          },
         }
       },
       {
@@ -107,7 +100,3 @@ export const IconButton  = styled(M2IconButton, {
     ]
   }
 });
-
-IconButton.defaultProps = {
-  variant: 'standard'
-}

@@ -7,7 +7,7 @@ export const getMUIComponents = (theme: Theme): M3Components => {
   return {
     components: {
       ...getCssBaseline(theme),
-      ...getButton(theme)
+      ...getButton(theme),
     }
   } as M3Components
 }
