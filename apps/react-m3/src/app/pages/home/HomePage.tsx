@@ -2,7 +2,7 @@ import { ButtonSection } from './sections/ButtonSection';
 import { BaseColorView } from './sections/BaseColorSection';
 import { IconButtonSection } from './sections/IconButtonSection';
 import { Stack } from '@mui/material';
-import { ToggleButtonSection } from './sections/ToggleButtonSection';
+import { ToggleButtonGroupSection } from './sections/ToggleButtonGroupSection';
 
 export const HomePage = () => {
   return (<>
@@ -10,7 +10,7 @@ export const HomePage = () => {
     <Stack spacing={6}>
       <ButtonSection/>
       <IconButtonSection/>
-      <ToggleButtonSection/>
+      <ToggleButtonGroupSection/>
     </Stack>
   </>)
 }

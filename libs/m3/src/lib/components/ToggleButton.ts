@@ -1,6 +1,4 @@
 import {
-  Theme,
-  ComponentsProps, ComponentsOverrides, ComponentsVariants,
   ToggleButtonProps as M2ToggleButtonProps, ToggleButton as M2ToggleButton, alpha
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -209,38 +207,3 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme, 
     ]
   }
 });
-
-interface M3ToggleButton {
-  MuiToggleButton: {
-    defaultProps?: ComponentsProps['MuiToggleButton'];
-    styleOverrides?: ComponentsOverrides<Theme>['MuiToggleButton'];
-    variants?: ComponentsVariants['MuiToggleButton'];
-  }
-}
-
-export const getToggleButton = (theme: Theme): M3ToggleButton => {
-  const { palette } = theme;
-  return {
-    MuiToggleButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: '50px',
-          textTransform: 'none',
-          color: palette.onSurface.main,
-          "&.Mui-selected": {
-            color: palette.onSecondaryContainer.main,
-            backgroundColor: palette.secondaryContainer.main,
-          },
-          '&.MuiToggleButton-primary': {
-            borderColor: 'transparent'
-          },
-          '&.MuiToggleButton-primary.Mui-selected': {
-            color: palette.onPrimary.main,
-            backgroundColor: palette.primary.main
-          },
-        },
-      },
-    }
-
-  };
-}

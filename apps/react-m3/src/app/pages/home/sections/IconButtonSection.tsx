@@ -4,6 +4,8 @@ import { IconButton, ToggleButton } from '@react-m3/m3';
 import SettingIconFilled from '@mui/icons-material/Settings';
 import SettingIconOutlined from '@mui/icons-material/SettingsOutlined';
 import { useState } from 'react';
+import CheckIcon from '@mui/icons-material/Check';
+import WindowsIcon from '@mui/icons-material/Window';
 
 export const IconButtonSection = () => {
   const [selected1, setSelected1] = useState(false);
@@ -24,6 +26,7 @@ export const IconButtonSection = () => {
         <IconButton disabled variant="tonal"><SettingIcon /></IconButton>
         <IconButton disabled variant="outlined"><SettingIcon /></IconButton>
       </Stack>
+
       <Typography variant="h6" fontWeight="bold">
         Toggle Button
       </Typography>
@@ -91,6 +94,47 @@ export const IconButtonSection = () => {
           variant="outlined"
           selected={selected1}>
           <SettingIconOutlined />
+        </ToggleButton>
+      </Stack>
+      <Stack direction="row" spacing={1}>
+        <ToggleButton
+          value="check"
+          selected={selected1}
+          onChange={() => {
+            setSelected1(!selected1);
+          }}>
+          {selected1 ? <CheckIcon sx={{ mr: 1 }}/> : <WindowsIcon sx={{ mr: 1 }}/>}
+          Windows
+        </ToggleButton>
+        <ToggleButton
+          value="check"
+          variant="filled"
+          selected={selected1}
+          onChange={() => {
+            setSelected1(!selected1);
+          }}>
+          {selected1 ? <CheckIcon sx={{ mr: 1 }}/> : <WindowsIcon sx={{ mr: 1 }}/>}
+          Windows
+        </ToggleButton>
+        <ToggleButton
+          value="check"
+          variant="tonal"
+          selected={selected1}
+          onChange={() => {
+            setSelected1(!selected1);
+          }}>
+          {selected1 ? <CheckIcon sx={{ mr: 1 }}/> : <WindowsIcon sx={{ mr: 1 }}/>}
+          Windows
+        </ToggleButton>
+        <ToggleButton
+          value="check"
+          variant="outlined"
+          selected={selected1}
+          onChange={() => {
+            setSelected1(!selected1);
+          }}>
+          {selected1 ? <CheckIcon sx={{ mr: 1 }}/> : <WindowsIcon sx={{ mr: 1 }}/>}
+          Windows
         </ToggleButton>
       </Stack>
     </Stack>
