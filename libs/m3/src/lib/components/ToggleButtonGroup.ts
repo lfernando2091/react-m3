@@ -27,6 +27,7 @@ export const getToggleButtonGroup = (theme: Theme): M3ToggleButtonGroup => {
           borderTopRightRadius: '50px',
         },
         grouped: {
+          textTransform: 'none',
           borderColor: palette.outline.main,
           backgroundColor: 'transparent',
           color: palette.onSurface.main,
