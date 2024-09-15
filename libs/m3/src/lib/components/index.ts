@@ -4,3 +4,4 @@ export { IconButton } from './IconButton';
 export { ToggleButton } from './ToggleButton';
 export { getToggleButtonGroup } from './ToggleButtonGroup';
 export { getFab } from './Fab';
+export { getSwitch } from './Switch';
