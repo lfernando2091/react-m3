@@ -9,7 +9,7 @@ interface M3Switch {
 }
 
 export const getSwitch = (theme: Theme): M3Switch => {
-  const { palette } = theme;
+  const { palette, motion, elevation } = theme;
   return {
     MuiSwitch: {
       styleOverrides: {
@@ -23,7 +23,8 @@ export const getSwitch = (theme: Theme): M3Switch => {
           '& .MuiSwitch-switchBase': {
             padding: 0,
             margin: 8,
-            transitionDuration: '100ms',
+            transitionDuration: motion.duration.medium2,
+            transitionTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
             '&.Mui-checked': {
               transform: 'translateX(20px)',
               margin: 4,
@@ -64,10 +65,10 @@ export const getSwitch = (theme: Theme): M3Switch => {
             '& .MuiSwitch-thumb': {
               color: palette.onSurfaceVariant.main,
               width: 28,
-              height: 28,
+              height: 28
             },
             '&.Mui-checked .MuiSwitch-thumb': {
-              color: palette.primaryContainer.main,
+              color: palette.primaryContainer.main
             }
           },
           '& .MuiSwitch-thumb': {
@@ -75,7 +76,7 @@ export const getSwitch = (theme: Theme): M3Switch => {
             color: palette.outline.main,
             width: 16,
             height: 16,
-            boxShadow: 'none',
+            boxShadow: elevation.level0,
             '&:before': {
               content: "''",
               position: 'absolute',

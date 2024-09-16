@@ -3,6 +3,14 @@ import { ThemeOptions, PaletteColor, PaletteColorOptions } from '@mui/material';
 import { Motion } from '../types/Motion';
 import { Elevation } from '../types/Elevation';
 
+declare module '@mui/material/styles/createThemeNoVars' {
+  interface Theme {
+    tones: TonalPalette,
+    motion: Motion,
+    elevation: Elevation
+  }
+}
+
 declare module '@mui/material/styles/createTheme' {
   interface ThemeOptions {
     tones?: TonalPalette,

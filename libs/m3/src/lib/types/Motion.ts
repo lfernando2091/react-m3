@@ -28,6 +28,8 @@ export type Motion = {
   easing: {
     emphasized: EasingType;
     standard: EasingType;
+    legacy: EasingType;
+    linear: string;
   },
   duration: DurationType
 }
@@ -43,6 +45,12 @@ export const MotionDefault: Motion = {
       default: 'cubic-bezier(0.2, 0.0, 0, 1.0)',
       accelerate: 'cubic-bezier(0.3, 0, 1, 1)',
       decelerate: 'cubic-bezier(0, 0, 0, 1)'
+    },
+    linear: 'cubic-bezier(0, 0, 1, 1)',
+    legacy: {
+      default: 'cubic-bezier(0.4, 0.0, 0.2, 1.0)',
+      accelerate: 'cubic-bezier(0.4, 0, 1, 1)',
+      decelerate: 'cubic-bezier(0, 0, 0.2, 1)'
     }
   },
   duration: {

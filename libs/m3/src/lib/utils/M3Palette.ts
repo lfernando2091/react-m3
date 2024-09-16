@@ -260,7 +260,6 @@ export const getM3Palette = (themeMode: ThemeMode, themeScheme: ThemeScheme): Th
         main: scheme.onWarningContainer,
         contrastText: scheme.warningContainer
       },
-
       divider: scheme.outline
     },
     tones: themeScheme.tones,
