@@ -263,6 +263,8 @@ export const getM3Palette = (themeMode: ThemeMode, themeScheme: ThemeScheme): Th
 
       divider: scheme.outline
     },
-    tones: themeScheme.tones
+    tones: themeScheme.tones,
+    motion: themeScheme.motion,
+    elevation: themeScheme.elevation,
   }
 }
