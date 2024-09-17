@@ -1,4 +1,6 @@
 import { Stack, Typography, Switch, FormControlLabel } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
+import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
 
 export const SwitchSection = () => {
@@ -11,6 +13,9 @@ export const SwitchSection = () => {
       </Typography>
       <Stack direction="row" spacing={1} alignItems={'center'}>
         <Switch defaultChecked={true}></Switch>
+        <Switch defaultChecked={true}
+                checkedIcon={<CheckIcon/>}
+                icon={<CloseIcon/>}></Switch>
         <FormControlLabel
           control={
             <Switch
@@ -28,6 +33,12 @@ export const SwitchSection = () => {
           control={<Switch checked />}
           label="Disabled"
         />
+        <Switch disabled defaultChecked={true}
+                checkedIcon={<CheckIcon/>}
+                icon={<CloseIcon/>}></Switch>
+        <Switch disabled
+                checkedIcon={<CheckIcon/>}
+                icon={<CloseIcon/>}></Switch>
       </Stack>
     </Stack>
   );

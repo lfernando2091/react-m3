@@ -25,6 +25,9 @@ export const getSwitch = (theme: Theme): M3Switch => {
             margin: 8,
             transitionDuration: motion.duration.medium2,
             transitionTimingFunction: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+            '&:has(svg)': {
+              margin: 4,
+            },
             '&.Mui-checked': {
               transform: 'translateX(20px)',
               margin: 4,
@@ -33,32 +36,126 @@ export const getSwitch = (theme: Theme): M3Switch => {
                 opacity: 1,
                 border: 0,
               },
-              '&:hover .MuiSwitch-thumb': {
-                color: palette.primaryContainer.main,
-              },
               '& .MuiSwitch-thumb': {
                 color: palette.onPrimary.main,
                 width: 24,
                 height: 24,
               },
-              '&.Mui-disabled + .MuiSwitch-track': {
-                backgroundColor: alpha(palette.onSurface.main, 0.1),
+              '& svg': {
+                padding: 4,
+                width: 24,
+                height: 24,
+                borderRadius: '50%',
+                color: palette.onPrimary.main,
+                backgroundColor: palette.onPrimary.main,
+              },
+              '&.Mui-disabled': {
+                '& + .MuiSwitch-track': {
+                  backgroundColor: alpha(palette.onSurface.main, 0.12),
+                },
+                '& .MuiSwitch-thumb': {
+                  color: palette.surface.main,
+                  boxShadow: 'none'
+                },
+                '& svg': {
+                  color: alpha(palette.onSurface.main, 0.38),
+                  backgroundColor: palette.surface.main,
+                }
+              },
+              '&.Mui-focusVisible': {
+                '& .MuiSwitch-thumb': {
+                  color: palette.primaryContainer.main,
+                },
+                '& + .MuiSwitch-track': {
+                  border: `3px solid ${palette.onSurfaceVariant.main}`
+                }
+              },
+            },
+            '& svg': {
+              padding: 4,
+              width: 24,
+              height: 24,
+              borderRadius: '50%',
+              color: palette.surfaceContainerHighest.main,
+              backgroundColor: palette.outline.main
+            },
+            '&.Mui-focusVisible': {
+              '& .MuiSwitch-thumb': {
+                color: palette.onSurfaceVariant.main,
+              },
+              '& + .MuiSwitch-track': {
+                border: `3px solid ${palette.primary.main}`
+              }
+            },
+            '&.Mui-disabled': {
+              '& .MuiSwitch-thumb': {
+                color: alpha(palette.onSurface.main, 0.38),
+              },
+              '& + .MuiSwitch-track': {
+                borderColor: alpha(palette.onSurface.main, 0.12),
+                backgroundColor: alpha(palette.surfaceVariant.main, 0.12),
+                opacity: 1,
+              },
+              '& svg': {
+                color: alpha(palette.surfaceContainerHighest.main, 0.38),
+                backgroundColor: alpha(palette.onSurface.main, 0.38)
+              }
+            }
+          },
+          '&:hover .MuiSwitch-switchBase': {
+            '& .MuiSwitch-thumb': {
+              color: palette.onSurfaceVariant.main,
+            },
+            '& svg': {
+              backgroundColor: palette.onSurfaceVariant.main,
+            },
+            '&.Mui-checked': {
+              '& .MuiSwitch-thumb': {
+                color: palette.primaryContainer.main,
+              },
+              '& svg': {
+                color: palette.onPrimaryContainer.main,
+                backgroundColor: palette.primaryContainer.main,
+              },
+              '&.Mui-disabled': {
+                '& .MuiSwitch-thumb': {
+                  color: palette.surface.main,
+                },
+                '& svg': {
+                  color: alpha(palette.onSurface.main, 0.38),
+                  backgroundColor: palette.surface.main,
+                }
+              },
+            },
+            '&.Mui-disabled': {
+              '& .MuiSwitch-thumb': {
+                color: alpha(palette.onSurface.main, 0.38),
+              },
+              '& svg': {
+                color: alpha(palette.surfaceContainerHighest.main, 0.38),
+                backgroundColor: alpha(palette.onSurface.main, 0.38)
+              }
+            }
+          },
+          '&:focus-within .MuiSwitch-switchBase': {
+            '& .MuiSwitch-thumb': {
+              color: palette.onSurfaceVariant.main,
+            },
+            '& svg': {
+              backgroundColor: palette.onSurfaceVariant.main,
+            },
+            '&.Mui-checked': {
+              '& .MuiSwitch-thumb': {
+                color: palette.primaryContainer.main,
               },
               '&.Mui-disabled .MuiSwitch-thumb': {
                 color: alpha(palette.surface.main, 0.8),
-                boxShadow: 'none'
               },
-            },
-            '&.Mui-focusVisible .MuiSwitch-thumb': {
-              color: palette.primary.main,
-              border: `6px solid ${palette.onPrimary.main}`,
-            },
-            '&.Mui-disabled .MuiSwitch-thumb': {
-              color: alpha(palette.onSurface.main, 0.3),
+              '& svg': {
+                color: palette.onPrimaryContainer.main,
+                backgroundColor: palette.primaryContainer.main,
+              },
             }
-          },
-          '&:hover .MuiSwitch-thumb': {
-            color: palette.onSurfaceVariant.main,
           },
           '&:active .MuiSwitch-switchBase': {
             margin: 2,
@@ -67,8 +164,43 @@ export const getSwitch = (theme: Theme): M3Switch => {
               width: 28,
               height: 28
             },
-            '&.Mui-checked .MuiSwitch-thumb': {
-              color: palette.primaryContainer.main
+            '& svg': {
+              backgroundColor: palette.onSurfaceVariant.main,
+              width: 28,
+              height: 28
+            },
+            '&.Mui-checked': {
+              '& .MuiSwitch-thumb': {
+                color: palette.primaryContainer.main
+              },
+              '& svg': {
+                backgroundColor: palette.primaryContainer.main
+              },
+              '&.Mui-disabled': {
+                margin: 4,
+                '& .MuiSwitch-thumb': {
+                  color: palette.surface.main,
+                  width: 24,
+                  height: 24
+                }
+              }
+            },
+            '&.Mui-disabled': {
+              margin: 8,
+              '&:has(svg)': {
+                margin: 4,
+              },
+              '& .MuiSwitch-thumb': {
+                width: 16,
+                height: 16,
+                color: alpha(palette.onSurface.main, 0.38),
+              },
+              '& svg': {
+                width: 24,
+                height: 24,
+                color: alpha(palette.surfaceContainerHighest.main, 0.38),
+                backgroundColor: alpha(palette.onSurface.main, 0.38)
+              }
             }
           },
           '& .MuiSwitch-thumb': {
@@ -94,7 +226,8 @@ export const getSwitch = (theme: Theme): M3Switch => {
             backgroundColor: palette.surfaceContainerHighest.main,
 
             opacity: 1,
-            transition: 'background .2s'
+            transition: `background-color ${motion.duration.short4}`,
+            transitionTimingFunction: motion.easing.linear,
           },
         },
       }
