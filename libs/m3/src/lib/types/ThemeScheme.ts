@@ -2,11 +2,13 @@ import { DarkTokensDefault, LightTokensDefault, ThemeTokens } from './ThemeToken
 import { TonalPalette, TonalPaletteDefault } from './TonalPalette';
 import { Motion, MotionDefault } from './Motion';
 import { Elevation, ElevationDefault } from './Elevation';
+import { Shape, ShapeDefault } from './Shape';
 
 export type ThemeScheme = {
   tones: TonalPalette;
   motion?: Motion;
   elevation?: Elevation;
+  shape?: Shape;
   light: ThemeTokens;
   "light-medium-contrast"?: ThemeTokens;
   "light-high-contrast"?: ThemeTokens;
@@ -20,5 +22,6 @@ export const ThemeSchemeDefault: ThemeScheme = {
   light: LightTokensDefault,
   dark: DarkTokensDefault,
   motion: MotionDefault,
-  elevation: ElevationDefault
+  elevation: ElevationDefault,
+  shape: ShapeDefault,
 }

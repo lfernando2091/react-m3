@@ -265,5 +265,6 @@ export const getM3Palette = (themeMode: ThemeMode, themeScheme: ThemeScheme): Th
     tones: themeScheme.tones,
     motion: themeScheme.motion,
     elevation: themeScheme.elevation,
+    shape: themeScheme.shape
   }
 }
