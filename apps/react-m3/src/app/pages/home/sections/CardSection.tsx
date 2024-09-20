@@ -75,6 +75,38 @@ export const CardSection = () => {
           </CardActions>
         </Card>
       </Stack>
+      <Stack direction='row' spacing={2} flexWrap={'wrap'}>
+        <Card variant="elevation" className="Mui-disabled">
+          <CardContent>
+            <Typography gutterBottom variant="h5">
+              Play relaxing songs
+            </Typography>
+            <Typography variant="body2">
+              From your recent favorites
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card variant="filled" className="Mui-disabled">
+          <CardContent>
+            <Typography gutterBottom variant="h5">
+              Play relaxing songs
+            </Typography>
+            <Typography variant="body2">
+              From your recent favorites
+            </Typography>
+          </CardContent>
+        </Card>
+        <Card variant="outlined" className="Mui-disabled">
+          <CardContent>
+            <Typography gutterBottom variant="h5">
+              Play relaxing songs
+            </Typography>
+            <Typography variant="body2">
+              From your recent favorites
+            </Typography>
+          </CardContent>
+        </Card>
+      </Stack>
       <Stack>
         <Card sx={{ maxWidth: 345, px: 0, paddingTop: 0 }} variant="elevation">
           <CardMedia sx={{ height: 0, paddingTop: '56.25%', borderRadius: 5 }}

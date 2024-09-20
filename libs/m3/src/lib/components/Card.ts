@@ -18,13 +18,13 @@ interface M3Card {
 }
 
 export const getCard = (theme: Theme): M3Card => {
-  const { palette, shape, elevation } = theme;
+  const { palette, shape, elevation, motion } = theme;
   return {
     MuiCard: {
       styleOverrides: {
         root: {
           borderRadius: shape.corner.medium.all,
-          padding: '10px 6px'
+          padding: '10px 16px'
         }
       },
       variants: [
@@ -36,85 +36,93 @@ export const getCard = (theme: Theme): M3Card => {
             transition: theme.transitions.create(
               ['background-color', 'box-shadow', 'border-color', 'color'],
               {
-                duration: theme.transitions.duration.short,
+                duration: motion.duration.medium1,
+                easing: motion.easing.emphasized.default
               },
             ),
             '&:hover': {
-              background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerLow.main, palette.primary.main),
-              boxShadow: theme.shadows[2]
+              background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerLow.main, palette.onSurface.main),
+              boxShadow: elevation.level2
             },
             '&:focus': {
-              boxShadow: theme.shadows[1],
-              background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerLow.main, palette.primary.main)
+              boxShadow: elevation.level1,
+              background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerLow.main, palette.onSurface.main)
             },
             '&:active': {
-              boxShadow: theme.shadows[1],
-              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerLow.main, palette.primary.main)
+              boxShadow: elevation.level1,
+              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerLow.main, palette.onSurface.main)
             },
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.surfaceContainerLow.main, 0.38),
               color: palette.surfaceVariant.main,
-              boxShadow: theme.shadows[0]
+              boxShadow: elevation.level1,
+              cursor: 'default',
             },
           }
         },
         {
           props: { variant: 'filled' },
           style: {
-            boxShadow: theme.shadows[0],
+            boxShadow: elevation.level0,
             backgroundColor: palette.surfaceContainerHighest.main,
             transition: theme.transitions.create(
               ['background-color', 'box-shadow', 'border-color', 'color'],
               {
-                duration: theme.transitions.duration.short,
+                duration: motion.duration.medium1,
+                easing: motion.easing.emphasized.default
               },
             ),
             '&:hover': {
-              background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHighest.main, palette.primary.main),
-              boxShadow: theme.shadows[1]
+              background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHighest.main, palette.onSurface.main),
+              boxShadow: elevation.level1
             },
             '&:focus': {
-              boxShadow: theme.shadows[0],
-              background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerHighest.main, palette.primary.main)
+              boxShadow: elevation.level0,
+              background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerHighest.main, palette.onSurface.main)
             },
             '&:active': {
-              boxShadow: theme.shadows[1],
-              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHighest.main, palette.primary.main)
+              boxShadow: elevation.level1,
+              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHighest.main, palette.onSurface.main)
             },
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.surfaceContainerHighest.main, 0.38),
               color: palette.surfaceVariant.main,
-              boxShadow: theme.shadows[1]
+              boxShadow: elevation.level0,
+              cursor: 'default',
             },
           }
         },
         {
           props: { variant: 'outlined' },
           style: {
-            boxShadow: theme.shadows[0],
+            boxShadow: elevation.level0,
             backgroundColor: palette.surface.main,
-            borderColor: palette.outline.main,
+            borderColor: palette.outlineVariant.main,
             transition: theme.transitions.create(
               ['background-color', 'box-shadow', 'border-color', 'color'],
               {
-                duration: theme.transitions.duration.short,
+                duration: motion.duration.medium1,
+                easing: motion.easing.emphasized.default
               },
             ),
             '&:hover': {
-              background: getStateLayerColor(StateLayer.Hover, palette.surface.main, palette.primary.main),
-              boxShadow: theme.shadows[1]
+              background: getStateLayerColor(StateLayer.Hover, palette.surface.main, palette.onSurface.main),
+              boxShadow: elevation.level1
             },
             '&:focus': {
-              boxShadow: theme.shadows[0],
-              background: getStateLayerColor(StateLayer.Focus, palette.surface.main, palette.primary.main)
+              boxShadow: elevation.level0,
+              background: getStateLayerColor(StateLayer.Focus, palette.surface.main, palette.onSurface.main)
             },
             '&:active': {
-              boxShadow: theme.shadows[2],
-              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHighest.main, palette.primary.main)
+              boxShadow: elevation.level2,
+              background: getStateLayerColor(StateLayer.Press, palette.surface.main, palette.onSurface.main)
             },
             '&.Mui-disabled': {
-              borderColor: alpha(palette.surfaceContainerHighest.main, 0.12),
-              boxShadow: theme.shadows[0]
+              backgroundColor: alpha(palette.surface.main, 0.38),
+              borderColor: alpha(palette.outlineVariant.main, 0.12),
+              boxShadow: elevation.level0,
+              color: palette.surfaceVariant.main,
+              cursor: 'default',
             },
           }
         }
