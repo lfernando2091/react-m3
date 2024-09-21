@@ -6,6 +6,7 @@ import { ToggleButtonGroupSection } from './sections/ToggleButtonGroupSection';
 import { FABSection } from './sections/FABSection';
 import { SwitchSection } from './sections/SwitchSection';
 import { CardSection } from './sections/CardSection';
+import { BadgeSection } from './sections/BadgeSection';
 
 export const HomePage = () => {
   return (<>
@@ -17,6 +18,7 @@ export const HomePage = () => {
       <FABSection/>
       <SwitchSection/>
       <CardSection/>
+      <BadgeSection/>
     </Stack>
   </>)
 }

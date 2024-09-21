@@ -1,5 +1,5 @@
 import { Theme } from '@mui/material';
-import { getCssBaseline, getButton, getToggleButtonGroup, getFab, getSwitch, getCard } from '../components';
+import { getCssBaseline, getButton, getToggleButtonGroup, getFab, getSwitch, getCard, getBadge } from '../components';
 
 type M3Components = { components: Theme['components'] };
 
@@ -11,7 +11,8 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getToggleButtonGroup(theme),
       ...getFab(theme),
       ...getSwitch(theme),
-      ...getCard(theme)
+      ...getCard(theme),
+      ...getBadge(theme),
     }
   } as M3Components
 }
