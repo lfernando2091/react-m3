@@ -8,7 +8,7 @@ interface ToggleButtonProps extends M2ToggleButtonProps{
   variant?: 'standard' | 'filled' | 'tonal' | 'outlined';
 }
 
-export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme, selected }) => {
+export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }) => {
   const { palette } = theme;
   return {
     borderRadius: '50px',

@@ -40,15 +40,16 @@ export const getCard = (theme: Theme): M3Card => {
                 easing: motion.easing.emphasized.default
               },
             ),
-            '&:hover': {
+            '&.Mui-clickable:hover': {
               background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerLow.main, palette.onSurface.main),
-              boxShadow: elevation.level2
+              boxShadow: elevation.level2,
+              cursor: 'pointer',
             },
-            '&:focus': {
+            '&.Mui-clickable:focus': {
               boxShadow: elevation.level1,
               background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerLow.main, palette.onSurface.main)
             },
-            '&:active': {
+            '&.Mui-clickable:active': {
               boxShadow: elevation.level1,
               background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerLow.main, palette.onSurface.main)
             },
@@ -72,15 +73,16 @@ export const getCard = (theme: Theme): M3Card => {
                 easing: motion.easing.emphasized.default
               },
             ),
-            '&:hover': {
+            '&.Mui-clickable:hover': {
               background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHighest.main, palette.onSurface.main),
-              boxShadow: elevation.level1
+              boxShadow: elevation.level1,
+              cursor: 'pointer',
             },
-            '&:focus': {
+            '&.Mui-clickable:focus': {
               boxShadow: elevation.level0,
               background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerHighest.main, palette.onSurface.main)
             },
-            '&:active': {
+            '&.Mui-clickable:active': {
               boxShadow: elevation.level1,
               background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHighest.main, palette.onSurface.main)
             },
@@ -105,15 +107,16 @@ export const getCard = (theme: Theme): M3Card => {
                 easing: motion.easing.emphasized.default
               },
             ),
-            '&:hover': {
+            '&.Mui-clickable:hover': {
               background: getStateLayerColor(StateLayer.Hover, palette.surface.main, palette.onSurface.main),
-              boxShadow: elevation.level1
+              boxShadow: elevation.level1,
+              cursor: 'pointer',
             },
-            '&:focus': {
+            '&.Mui-clickable:focus': {
               boxShadow: elevation.level0,
               background: getStateLayerColor(StateLayer.Focus, palette.surface.main, palette.onSurface.main)
             },
-            '&:active': {
+            '&.Mui-clickable:active': {
               boxShadow: elevation.level2,
               background: getStateLayerColor(StateLayer.Press, palette.surface.main, palette.onSurface.main)
             },

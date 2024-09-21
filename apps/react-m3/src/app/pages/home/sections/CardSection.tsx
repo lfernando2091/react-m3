@@ -56,12 +56,57 @@ export const CardSection = () => {
             </Typography>
           </CardContent>
           <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            {/* @ts-expect-error: surfaceContainer declared with type def */}
             <Button variant="outlined" sx={{ background: (theme: Theme) => theme.palette.surfaceContainer.main }} >
               Get started
             </Button>
           </CardActions>
         </Card>
         <Card variant="outlined">
+          <CardContent>
+            <Typography gutterBottom variant="h5" >
+              Play relaxing songs
+            </Typography>
+            <Typography variant="body2">
+              From your recent favorites
+            </Typography>
+          </CardContent>
+          <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="tonal" size="small">Get started</Button>
+          </CardActions>
+        </Card>
+      </Stack>
+      <Stack direction='row' spacing={2} flexWrap={'wrap'}>
+        <Card variant="elevation" className="Mui-clickable">
+          <CardContent>
+            <Typography gutterBottom variant="h5">
+              Play relaxing songs
+            </Typography>
+            <Typography variant="body2">
+              From your recent favorites
+            </Typography>
+          </CardContent>
+          <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Button variant="filled" size="small">Get started</Button>
+          </CardActions>
+        </Card>
+        <Card variant="filled" className="Mui-clickable">
+          <CardContent>
+            <Typography gutterBottom variant="h5" >
+              Play relaxing songs
+            </Typography>
+            <Typography variant="body2">
+              From your recent favorites
+            </Typography>
+          </CardContent>
+          <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+            {/* @ts-expect-error: surfaceContainer declared with type def */}
+            <Button variant="outlined" sx={{ background: (theme: Theme) => theme.palette.surfaceContainer.main }} >
+              Get started
+            </Button>
+          </CardActions>
+        </Card>
+        <Card variant="outlined" className="Mui-clickable">
           <CardContent>
             <Typography gutterBottom variant="h5" >
               Play relaxing songs
