@@ -3,6 +3,7 @@ import { Box, SxProps, useMediaQuery, useTheme } from '@mui/material';
 import { useState } from 'react';
 import { MainAppBar } from './MainAppBar';
 import { MainContainer } from './MainContainer';
+import { MainDrawer } from './MainDrawer';
 
 const drawerWidth = 260;
 
@@ -44,9 +45,9 @@ export const MainLayout = () => {
     {/*      onClose={handleDrawerToggle}*/}
     {/*    />*/}
     {/*  )}*/}
-    {/*  <MainDrawer variant="permanent"*/}
-    {/*              PaperProps={{ style: { width: drawerWidth } }}*/}
-    {/*              sx={{ display: { md: 'block', sm: 'none', xs: 'none' } }} />*/}
+      <MainDrawer variant="permanent"
+                  PaperProps={{ style: { width: drawerWidth } }}
+                  sx={{ display: { md: 'block', sm: 'none', xs: 'none' } }} />
     </Box>
     <Box sx={mainStyles}>
       <Box sx={containerStyles}>
