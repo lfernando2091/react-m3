@@ -1,16 +1,11 @@
-import styled from '@emotion/styled';
-import { HomePage } from './pages/home/HomePage';
-
-const StyledApp = styled.div`
-  // Your style here
-    margin: 3rem;
-`;
+import { BrowserRouter } from 'react-router-dom';
+import { Router } from './app-router';
 
 export function App() {
   return (
-    <StyledApp>
-      <HomePage/>
-    </StyledApp>
+    <BrowserRouter>
+      <Router/>
+    </BrowserRouter>
   );
 }
 

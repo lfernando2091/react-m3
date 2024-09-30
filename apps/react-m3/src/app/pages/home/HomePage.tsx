@@ -7,6 +7,7 @@ import { FABSection } from './sections/FABSection';
 import { SwitchSection } from './sections/SwitchSection';
 import { CardSection } from './sections/CardSection';
 import { BadgeSection } from './sections/BadgeSection';
+import { AppBarSection } from './sections/AppBarSection';
 
 export const HomePage = () => {
   return (<>
@@ -19,6 +20,7 @@ export const HomePage = () => {
       <SwitchSection/>
       <CardSection/>
       <BadgeSection/>
+      <AppBarSection/>
     </Stack>
   </>)
 }

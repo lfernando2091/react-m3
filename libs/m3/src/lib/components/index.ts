@@ -8,3 +8,4 @@ export { getSwitch } from './Switch';
 export { getCard } from './Card';
 export { getBadge } from './Badge';
 export { getDrawer } from './Drawer';
+export { getAppBar } from './AppBar';

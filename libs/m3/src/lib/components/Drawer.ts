@@ -6,7 +6,7 @@ interface M3Drawer {
     styleOverrides?: ComponentsOverrides<Theme>['MuiDrawer'];
     variants?: ComponentsVariants['MuiDrawer'];
   }
-};
+}
 
 export const getDrawer = (theme: Theme): M3Drawer => {
   const { palette } = theme;
