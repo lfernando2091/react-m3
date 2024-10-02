@@ -27,6 +27,8 @@ export const SwitchSection = () => {
           label={status ? "On" : "Off"}
         />
         <FormControlLabel control={<Switch />} label="Uncontrolled" />
+      </Stack>
+      <Stack direction="row" spacing={1} alignItems={'center'}>
         <FormControlLabel disabled control={<Switch />} label="Disabled" />
         <FormControlLabel
           disabled

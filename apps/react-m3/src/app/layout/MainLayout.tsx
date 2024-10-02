@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
 import { Box, SxProps, useMediaQuery, useTheme } from '@mui/material';
-import { useState } from 'react';
 import { MainAppBar } from './MainAppBar';
 import { MainContainer } from './MainContainer';
 import { MainDrawer } from './MainDrawer';
+import { useAppContext } from '../@core/AppContext';
 
 const drawerWidth = 360;
 
@@ -29,29 +29,27 @@ const containerStyles: SxProps = {
 export const MainLayout = () => {
   const theme = useTheme();
   const isSmUp = useMediaQuery(theme.breakpoints.up('md'));
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const { openDrawer, switchDrawer } = useAppContext();
 
   const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
+    switchDrawer();
   };
 
   return (<Box sx={rootStyles}>
     <Box component="nav" sx={navStyles}>
-    {/*  {isSmUp ? null : (*/}
-    {/*    <MainDrawer*/}
-    {/*      PaperProps={{ style: { width: drawerWidth } }}*/}
-    {/*      variant="temporary"*/}
-    {/*      open={mobileOpen}*/}
-    {/*      onClose={handleDrawerToggle}*/}
-    {/*    />*/}
-    {/*  )}*/}
+      {!isSmUp && <MainDrawer
+        PaperProps={{ style: { width: drawerWidth } }}
+        variant="temporary"
+        open={openDrawer}
+        onClose={handleDrawerToggle}
+      />}
       <MainDrawer variant="permanent"
                   PaperProps={{ style: { width: drawerWidth } }}
                   sx={{ display: { md: 'block', sm: 'none', xs: 'none' } }} />
     </Box>
     <Box sx={mainStyles}>
       <Box sx={containerStyles}>
-        <MainAppBar onDrawerToggle={handleDrawerToggle} />
+        <MainAppBar />
         <MainContainer>
           <Outlet />
         </MainContainer>

@@ -2,13 +2,14 @@ import { AppBar, Toolbar, Typography, useScrollTrigger } from '@mui/material';
 import { IconButton } from '@react-m3/m3';
 import MenuIcon from '@mui/icons-material/MenuTwoTone';
 import Grid from '@mui/material/Grid2';
+import { useAppContext } from '../@core/AppContext';
 
 export type MainAppBarProps = {
-  onDrawerToggle?: () => void,
   window?: () => Window;
 }
 
 export const MainAppBar = ({ window }: MainAppBarProps) => {
+  const { switchDrawer } = useAppContext();
   const trigger = useScrollTrigger({
     disableHysteresis: true,
     threshold: 0,
@@ -19,7 +20,7 @@ export const MainAppBar = ({ window }: MainAppBarProps) => {
       <Toolbar>
         <Grid container spacing={1} alignItems="center">
           <Grid sx={{ display: { md: 'none', sm: 'block' } }}>
-            <IconButton color="inherit" edge="start">
+            <IconButton color="inherit" edge="start" onClick={() => switchDrawer()}>
               <MenuIcon />
             </IconButton>
           </Grid>
