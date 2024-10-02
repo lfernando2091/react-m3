@@ -5,7 +5,7 @@ import { MainAppBar } from './MainAppBar';
 import { MainContainer } from './MainContainer';
 import { MainDrawer } from './MainDrawer';
 
-const drawerWidth = 260;
+const drawerWidth = 360;
 
 const rootStyles: SxProps = {
   display: 'flex',

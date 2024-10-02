@@ -7,7 +7,7 @@ import {
   getSwitch,
   getCard,
   getBadge,
-  getDrawer, getAppBar
+  getDrawer, getAppBar, getListItem, getListItemIcon, getListItemButton, getListSubheader
 } from '../components';
 
 type M3Components = { components: Theme['components'] };
@@ -23,7 +23,11 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getCard(theme),
       ...getBadge(theme),
       ...getDrawer(theme),
-      ...getAppBar(theme)
+      ...getAppBar(theme),
+      ...getListItem(theme),
+      ...getListItemIcon(theme),
+      ...getListItemButton(theme),
+      ...getListSubheader(theme)
     }
   } as M3Components
 }

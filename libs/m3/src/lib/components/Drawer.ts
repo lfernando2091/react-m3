@@ -9,14 +9,34 @@ interface M3Drawer {
 }
 
 export const getDrawer = (theme: Theme): M3Drawer => {
-  const { palette } = theme;
+  const { palette, shape, elevation } = theme;
   return {
     MuiDrawer: {
+      defaultProps: {
+        PaperProps: {
+          width: '360px',
+        }
+      },
       styleOverrides: {
+        root: {
+
+        },
+        docked: {
+          '& .MuiPaper-root': {
+            backgroundColor: palette.surface.main,
+            boxShadow: elevation.level0
+          }
+        },
         paper: {
           border: '0px',
-          background: palette.surfaceContainerLow.main,
-          color: palette.onSurfaceVariant.main
+          color: palette.onSurfaceVariant.main,
+          borderRadius: shape.corner.large.end
+        },
+        modal: {
+          '& .MuiPaper-root': {
+            // backgroundColor: palette.surfaceContainerLow.main
+            // boxShadow: elevation.level1,
+          }
         }
       }
     },
