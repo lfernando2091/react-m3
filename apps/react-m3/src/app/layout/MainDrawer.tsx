@@ -5,7 +5,7 @@ import {
   List,
   ListItem,
   ListItemButton, ListItemIcon,
-  ListItemText,
+  ListItemText, ListSubheader,
   Toolbar,
   Typography
 } from '@mui/material';
@@ -64,26 +64,18 @@ export const MainDrawer = (props: DrawerProps) => {
         </Typography>
       </Toolbar>
       <List>
-        <Box>
-          <ListItem>
-            <ListItemButton component={Link} to='/' selected={selectedIndex === ''} onClick={() => handleListItemClick('')}>
-              <ListItemIcon>
-                {selectedIndex === 'Home' ? <HomeIcon /> : <HomeIconOutlined />}
-              </ListItemIcon>
-              <ListItemText>Home</ListItemText>
-              100+
-            </ListItemButton>
-          </ListItem>
-        </Box>
+        <ListItem divider>
+          <ListItemButton component={Link} to='/' selected={selectedIndex === ''} onClick={() => handleListItemClick('')}>
+            <ListItemIcon>
+              {selectedIndex === 'Home' ? <HomeIcon /> : <HomeIconOutlined />}
+            </ListItemIcon>
+            <ListItemText>Home</ListItemText>
+            100+
+          </ListItemButton>
+        </ListItem>
+      </List>
         {categories.map(({ id, children }) => (
-          <Box key={id}>
-            <ListItem sx={{ py: 2, px: 3 }}>
-              <ListItemText sx={{ fontWeight: 'bold' }}>
-                <Typography color="inherit" sx={{ ml: 1, fontSize: 15, fontWeight: 500 }} >
-                  {id}
-                </Typography>
-              </ListItemText>
-            </ListItem>
+          <List key={id} subheader={<ListSubheader>{id}</ListSubheader>}>
             {children.map(({ id: childId, icon }) => (
               <ListItem key={childId}>
                 <ListItemButton selected={selectedIndex === childId} onClick={() => handleListItemClick(childId)}>
@@ -92,9 +84,8 @@ export const MainDrawer = (props: DrawerProps) => {
                 </ListItemButton>
               </ListItem>
             ))}
-          </Box>
+          </List>
         ))}
-      </List>
     </Drawer>
   )
 }

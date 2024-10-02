@@ -25,7 +25,10 @@ export const getListItem = (theme: Theme): M3ListItem => {
                           fontWeight: 'bold'
                         }
                     },
-                }
+                },
+              divider: {
+                  borderBottomColor: palette.outlineVariant.main
+              }
             }
         }
     }
