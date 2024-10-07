@@ -48,7 +48,7 @@ export const getDrawer = (theme: Theme): M3Drawer => {
             boxShadow: elevation.level1,
           },
           '&.MuiDrawer-modal .MuiModal-backdrop': {
-            backgroundColor: alpha('#000',0.32),
+            backgroundColor: alpha(palette.scrim.main, 0.32),
           }
         }
       }
