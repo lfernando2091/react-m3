@@ -1,4 +1,4 @@
-import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants } from "@mui/material";
+import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants, alpha } from '@mui/material';
 
 interface M3Drawer {
   MuiDrawer: {
@@ -9,7 +9,7 @@ interface M3Drawer {
 }
 
 export const getDrawer = (theme: Theme): M3Drawer => {
-  const { palette, shape, elevation } = theme;
+  const { palette, shape, elevation, motion } = theme;
   return {
     MuiDrawer: {
       defaultProps: {
@@ -22,7 +22,17 @@ export const getDrawer = (theme: Theme): M3Drawer => {
 
         },
         docked: {
-          '& .MuiPaper-root': {
+          '&.MuiDrawer-docked .MuiPaper-root': {
+            transition: theme.transitions.create(
+              ['box-shadow', 'transform'],
+              {
+                duration: motion.duration.medium2,
+                easing: motion.easing.emphasized.default
+              },
+            ),
+            '&:hover': {
+              boxShadow: elevation.level2
+            },
             backgroundColor: palette.surface.main,
             boxShadow: elevation.level0
           }
@@ -33,9 +43,12 @@ export const getDrawer = (theme: Theme): M3Drawer => {
           borderRadius: shape.corner.large.end
         },
         modal: {
-          '& .MuiPaper-root': {
-            // backgroundColor: palette.surfaceContainerLow.main
-            // boxShadow: elevation.level1,
+          '&.MuiDrawer-modal .MuiPaper-root': {
+            backgroundColor: palette.surfaceContainerLow.main,
+            boxShadow: elevation.level1,
+          },
+          '&.MuiDrawer-modal .MuiModal-backdrop': {
+            backgroundColor: alpha('#000',0.32),
           }
         }
       }
