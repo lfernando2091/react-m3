@@ -59,7 +59,7 @@ export const MainDrawer = (props: DrawerProps) => {
   return (
     <Drawer {...others} onClose={onClose}>
       <Toolbar>
-        <Typography color="inherit" sx={{ fontWeight: 500, letterSpacing: 0.5, fontSize: 20 }}>
+        <Typography sx={{ fontWeight: 500, letterSpacing: 0.5, fontSize: 20 }}>
           Material You
         </Typography>
       </Toolbar>

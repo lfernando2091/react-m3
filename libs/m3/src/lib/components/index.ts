@@ -13,3 +13,5 @@ export { getListItem } from './ListItem';
 export { getListItemIcon } from './ListItemIcon';
 export { getListItemButton } from './ListItemButton';
 export { getListSubheader } from './ListSubheader';
+export { getAccordion } from './Accordion';
+export { getTypography } from './Typography';
