@@ -9,6 +9,7 @@ import { CardSection } from './sections/CardSection';
 import { BadgeSection } from './sections/BadgeSection';
 import { AppBarSection } from './sections/AppBarSection';
 import { ListSection } from './sections/ListSection';
+import { AccordionSection } from './sections/AccordionSection';
 
 export const HomePage = () => {
   return (<>
@@ -23,6 +24,7 @@ export const HomePage = () => {
       <BadgeSection/>
       <AppBarSection/>
       <ListSection/>
+      <AccordionSection/>
     </Stack>
   </>)
 }
