@@ -26,14 +26,14 @@ declare module '@mui/material/Fab' {
 }
 
 export const getFab = (theme: Theme): M3Fab => {
-    const { palette } = theme;
+    const { palette, elevation } = theme;
     return {
         MuiFab: {
             defaultProps: { color: 'secondary' },
             styleOverrides: {
                 root: {
                     textTransform: 'none',
-                    boxShadow: theme.shadows[3],
+                    boxShadow: elevation.level3,
                     borderRadius: '16px'
                 },
                 extended: {
@@ -52,15 +52,15 @@ export const getFab = (theme: Theme): M3Fab => {
                         color: palette.onPrimaryContainer.main,
                         '&:hover': {
                             background: getStateLayerColor(StateLayer.Hover, palette.primaryContainer.main, palette.onPrimaryContainer.main),
-                            boxShadow: theme.shadows[4]
+                            boxShadow: elevation.level4
                         },
                         '&:focus': {
                             background: getStateLayerColor(StateLayer.Focus, palette.primaryContainer.main, palette.onPrimaryContainer.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                         '&:active': {
                             background: getStateLayerColor(StateLayer.Press, palette.primaryContainer.main, palette.onPrimaryContainer.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                     }
 
@@ -73,15 +73,15 @@ export const getFab = (theme: Theme): M3Fab => {
                         color: palette.onSecondaryContainer.main,
                         '&:hover': {
                             background: getStateLayerColor(StateLayer.Hover, palette.secondaryContainer.main, palette.onSecondaryContainer.main),
-                            boxShadow: theme.shadows[4]
+                            boxShadow: elevation.level4
                         },
                         '&:focus': {
                             background: getStateLayerColor(StateLayer.Focus, palette.secondaryContainer.main, palette.onSecondaryContainer.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                         '&:active': {
                             background: getStateLayerColor(StateLayer.Press, palette.secondaryContainer.main, palette.onSecondaryContainer.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                     }
 
@@ -94,18 +94,17 @@ export const getFab = (theme: Theme): M3Fab => {
                         color: palette.primary.main,
                         '&:hover': {
                             background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHigh.main, palette.primary.main),
-                            boxShadow: theme.shadows[4]
+                            boxShadow: elevation.level4
                         },
                         '&:focus': {
                             background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerHigh.main, palette.primary.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                         '&:active': {
                             background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHigh.main, palette.primary.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                     }
-
                 },
                 {
                     props: { color: 'tertiary' },
@@ -114,15 +113,15 @@ export const getFab = (theme: Theme): M3Fab => {
                         color: palette.onTertiaryContainer.main,
                         '&:hover': {
                             background: getStateLayerColor(StateLayer.Hover, palette.tertiaryContainer.main, palette.onTertiaryContainer.main),
-                            boxShadow: theme.shadows[4]
+                            boxShadow: elevation.level4
                         },
                         '&:focus': {
                             background: getStateLayerColor(StateLayer.Focus, palette.tertiaryContainer.main, palette.onTertiaryContainer.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                         '&:active': {
                             background: getStateLayerColor(StateLayer.Press, palette.tertiaryContainer.main, palette.onTertiaryContainer.main),
-                            boxShadow: theme.shadows[3]
+                            boxShadow: elevation.level3
                         },
                     }
 

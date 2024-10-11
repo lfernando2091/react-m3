@@ -9,7 +9,7 @@ interface ToggleButtonProps extends M2ToggleButtonProps{
 }
 
 export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }) => {
-  const { palette } = theme;
+  const { palette, elevation } = theme;
   return {
     borderRadius: '50px',
     textTransform: 'none',
@@ -19,7 +19,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
         style: {
           backgroundColor: 'transparent',
           color: palette.onSurfaceVariant.main,
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           '&.Mui-disabled': {
             color: alpha(palette.onSurface.main, 0.38),
@@ -39,7 +39,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
       {
         props: ({ variant, selected }: ToggleButtonProps) => (variant === undefined || variant === 'standard') && selected,
         style: {
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           "&.Mui-selected": {
             color: palette.primary.main,
@@ -65,7 +65,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
         style: {
           backgroundColor: palette.surfaceContainerHighest.main,
           color: palette.primary.main,
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           '&.Mui-disabled': {
             color: alpha(palette.onSurface.main, 0.38),
@@ -86,7 +86,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
       {
         props: ({ variant, selected }: ToggleButtonProps) => variant === 'filled' && selected,
         style: {
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           "&.Mui-selected": {
             backgroundColor: palette.primary.main,
@@ -113,7 +113,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
         style: {
           backgroundColor: palette.surfaceContainerHighest.main,
           color: palette.onSurfaceVariant.main,
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           '&.Mui-disabled': {
             color: alpha(palette.onSurface.main, 0.38),
@@ -134,7 +134,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
       {
         props: ({ variant, selected }: ToggleButtonProps) => variant === 'tonal' && selected,
         style: {
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           "&.Mui-selected": {
             backgroundColor: palette.secondaryContainer.main,
@@ -161,7 +161,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
         style: {
           backgroundColor: 'transparent',
           color: palette.onSurfaceVariant.main,
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           borderColor: palette.outline.main,
           '&.Mui-disabled': {
             backgroundColor: 'transparent',
@@ -182,7 +182,7 @@ export const ToggleButton = styled(M2ToggleButton)<ToggleButtonProps>(({ theme }
       {
         props: ({ variant, selected }: ToggleButtonProps) => variant === 'outlined' && selected,
         style: {
-          boxShadow: theme.shadows[0],
+          boxShadow: elevation.level0,
           border: 'none',
           "&.Mui-selected": {
             backgroundColor: palette.inverseSurface.main,

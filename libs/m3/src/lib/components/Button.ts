@@ -27,7 +27,7 @@ interface M3Button {
 }
 
 export const getButton = (theme: Theme): M3Button => {
-  const { palette } = theme;
+  const { palette, elevation, shape } = theme;
   return {
     MuiButton: {
       styleOverrides: {
@@ -39,7 +39,7 @@ export const getButton = (theme: Theme): M3Button => {
           minHeight: 40,
           '&:has(>svg)': {
             padding: '8px',
-            borderRadius: '50%',
+            borderRadius: shape.corner.full.all,
             minWidth: '1em',
             minHeight: '1em'
           }
@@ -49,12 +49,12 @@ export const getButton = (theme: Theme): M3Button => {
         {
           props: { variant: 'elevated' },
           style: {
-            boxShadow: theme.shadows[1],
+            boxShadow: elevation.level1,
             backgroundColor: palette.surfaceContainerLow.main,
             color: palette.primary.main,
             '&:hover': {
               background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerLow.main, palette.primary.main),
-              boxShadow: theme.shadows[2]
+              boxShadow: elevation.level2
             },
             '&:focus': {
               background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerLow.main, palette.primary.main)
@@ -65,7 +65,7 @@ export const getButton = (theme: Theme): M3Button => {
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.onSurface.main, 0.12),
               color: alpha(palette.onSurface.main, 0.38),
-              boxShadow: theme.shadows[0]
+              boxShadow: elevation.level0
             },
           }
         },
@@ -74,23 +74,23 @@ export const getButton = (theme: Theme): M3Button => {
           style: {
             backgroundColor: palette.primary.main,
             color: palette.onPrimary.main,
-            boxShadow: theme.shadows[0],
+            boxShadow: elevation.level0,
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.onSurface.main, 0.12),
               color: alpha(palette.onSurface.main, 0.38),
-              boxShadow: theme.shadows[0]
+              boxShadow: elevation.level0,
             },
             '&:hover': {
               backgroundColor: getStateLayerColor(StateLayer.Hover, palette.primary.main, palette.onPrimary.main),
-              boxShadow: theme.shadows[1],
+              boxShadow: elevation.level1,
             },
             '&:focus': {
               backgroundColor: getStateLayerColor(StateLayer.Focus, palette.primary.main, palette.onPrimary.main),
-              boxShadow: theme.shadows[0],
+              boxShadow: elevation.level0,
             },
             '&:active': {
               backgroundColor: getStateLayerColor(StateLayer.Press, palette.primary.main, palette.onPrimary.main),
-              boxShadow: theme.shadows[0],
+              boxShadow: elevation.level0,
             }
           }
         },
@@ -99,23 +99,23 @@ export const getButton = (theme: Theme): M3Button => {
           style: {
             backgroundColor: palette.secondaryContainer.main,
             color: palette.onSecondaryContainer.main,
-            boxShadow: theme.shadows[0],
+            boxShadow: elevation.level0,
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.onSurface.main, 0.12),
               color: alpha(palette.onSurface.main, 0.38),
-              boxShadow: theme.shadows[0]
+              boxShadow: elevation.level0,
             },
             '&:hover': {
               backgroundColor: getStateLayerColor(StateLayer.Hover, palette.secondaryContainer.main, palette.onSecondaryContainer.main),
-              boxShadow: theme.shadows[1],
+              boxShadow: elevation.level1
             },
             '&:focus': {
               backgroundColor: getStateLayerColor(StateLayer.Focus, palette.secondaryContainer.main, palette.onSecondaryContainer.main),
-              boxShadow: theme.shadows[0],
+              boxShadow: elevation.level0,
             },
             '&:active': {
               backgroundColor: getStateLayerColor(StateLayer.Press, palette.secondaryContainer.main, palette.onSecondaryContainer.main),
-              boxShadow: theme.shadows[0],
+              boxShadow: elevation.level0,
             }
           }
         },
@@ -125,7 +125,7 @@ export const getButton = (theme: Theme): M3Button => {
             color: palette.primary.main,
             borderColor: palette.outline.main,
             borderWidth: '1px',
-            boxShadow: theme.shadows[0],
+            boxShadow: elevation.level0,
             '&.Mui-disabled': {
               borderColor: alpha(palette.onSurface.main, 0.12),
               color: alpha(palette.onSurface.main, 0.38),
@@ -149,7 +149,7 @@ export const getButton = (theme: Theme): M3Button => {
           style: {
             backgroundColor: 'transparent',
             color: palette.primary.main,
-            boxShadow: theme.shadows[0],
+            boxShadow: elevation.level0,
             paddingInlineStart: 12,
             paddingInlineEnd: 12,
             '&.Mui-disabled': {
