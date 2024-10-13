@@ -15,7 +15,7 @@ import {
   getListSubheader,
   getAccordion,
   getTypography,
-  getAlert
+  getAlert, getTextField
 } from '../components';
 
 type M3Components = { components: Theme['components'] };
@@ -39,6 +39,7 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getAccordion(theme),
       ...getTypography(theme),
       ...getAlert(theme),
+      ...getTextField(theme),
     }
   } as M3Components
 }

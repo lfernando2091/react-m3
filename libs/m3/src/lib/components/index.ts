@@ -16,3 +16,4 @@ export { getListSubheader } from './ListSubheader';
 export { getAccordion } from './Accordion';
 export { getTypography } from './Typography';
 export { getAlert } from './Alert';
+export { getTextField } from './TextField';

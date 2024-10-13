@@ -11,6 +11,7 @@ import { AppBarSection } from './sections/AppBarSection';
 import { ListSection } from './sections/ListSection';
 import { AccordionSection } from './sections/AccordionSection';
 import { AlertSection } from './sections/AlertSection';
+import { TextFieldSection } from './sections/TextFieldSection';
 
 export const HomePage = () => {
   return (<>
@@ -21,6 +22,7 @@ export const HomePage = () => {
       <ToggleButtonGroupSection/>
       <FABSection/>
       <SwitchSection/>
+      <TextFieldSection/>
       <CardSection/>
       <BadgeSection/>
       <AppBarSection/>
