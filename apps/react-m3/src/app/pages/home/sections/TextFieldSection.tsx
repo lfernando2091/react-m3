@@ -78,17 +78,120 @@ export const TextFieldSection = () => {
             },
           }}
         />
-        <TextField label="Outlined" variant="outlined" color="secondary" />
+        <TextField label="Filled" variant="filled"
+                   helperText="My helper text"
+                   defaultValue="Abcd"
+                   placeholder="My placeholder text"
+                   slotProps={{
+                     input: {
+                       startAdornment: (
+                         <InputAdornment position="start">±</InputAdornment>
+                       ),
+                       endAdornment: (
+                         <InputAdornment position="end" color="inherit">
+                           <IconButton edge="end">
+                             <HighlightOffIcon/>
+                           </IconButton>
+                         </InputAdornment>
+                       ),
+                     },
+                   }}/>
+        <TextField label="Filled" variant="filled" disabled
+                   helperText="My helper text"
+                   defaultValue="Abcd"
+                   placeholder="My placeholder text"
+                   slotProps={{
+                     input: {
+                       startAdornment: (
+                         <InputAdornment position="start" disableTypography>
+                           ±
+                         </InputAdornment>
+                       ),
+                       endAdornment: (
+                         <InputAdornment position="end">
+                           <IconButton edge="end" disabled>
+                             <HighlightOffIcon />
+                           </IconButton>
+                         </InputAdornment>
+                       ),
+                     },
+                   }}/>
         <TextField
-          label="Outlined"
-          variant="outlined"
-          color="secondary"
-          disabled
+          error
+          label="Filled"
+          variant="filled"
+          helperText="My helper text"
+          defaultValue="Abcd"
+          placeholder="My placeholder text"
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">±</InputAdornment>
+              ),
+              endAdornment: (
+                <InputAdornment position="end" color="inherit">
+                  <IconButton edge="end">
+                    <HighlightOffIcon/>
+                  </IconButton>
+                </InputAdornment>
+              ),
+            },
+          }}
         />
-        <TextField label="Filled" variant="filled" />
-        <TextField label="Filled" variant="filled" disabled />
-        <TextField label="Standard" variant="standard" />
-        <TextField label="Standard" variant="standard" disabled />
+        <TextField label="Standard" variant="standard"
+                   helperText="My helper text"
+                   defaultValue="Abcd"
+                   placeholder="My placeholder text"
+                   slotProps={{
+                     input: {
+                       startAdornment: (
+                         <InputAdornment position="start">±</InputAdornment>
+                       ),
+                       endAdornment: (
+                         <InputAdornment position="end" color="inherit">
+                           <IconButton edge="end">
+                             <HighlightOffIcon/>
+                           </IconButton>
+                         </InputAdornment>
+                       ),
+                     },
+                   }}/>
+        <TextField error label="Standard" variant="standard"
+                   helperText="My helper text"
+                   defaultValue="Abcd"
+                   placeholder="My placeholder text"
+                   slotProps={{
+                     input: {
+                       startAdornment: (
+                         <InputAdornment position="start" color="inherit">±</InputAdornment>
+                       ),
+                       endAdornment: (
+                         <InputAdornment position="end" color="inherit">
+                           <IconButton edge="end">
+                             <HighlightOffIcon color="inherit"/>
+                           </IconButton>
+                         </InputAdornment>
+                       ),
+                     },
+                   }}/>
+        <TextField disabled label="Standard" variant="standard"
+                   helperText="My helper text"
+                   defaultValue="Abcd"
+                   placeholder="My placeholder text"
+                   slotProps={{
+                     input: {
+                       startAdornment: (
+                         <InputAdornment position="start" disableTypography>±</InputAdornment>
+                       ),
+                       endAdornment: (
+                         <InputAdornment position="end" color="inherit">
+                           <IconButton edge="end" disabled>
+                             <HighlightOffIcon/>
+                           </IconButton>
+                         </InputAdornment>
+                       ),
+                     },
+                   }}/>
       </Stack>
     </Stack>
   );

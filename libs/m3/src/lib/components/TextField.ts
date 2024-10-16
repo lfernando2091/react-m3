@@ -1,20 +1,24 @@
-import { Theme, ComponentsProps, ComponentsOverrides, ComponentsVariants, alpha } from '@mui/material';
+import {
+  alpha,
+  ComponentsOverrides,
+  ComponentsProps,
+  ComponentsVariants,
+  Theme,
+} from '@mui/material';
+import { getStateLayerColor, StateLayer } from '../utils/StateLayerColor';
 
 interface M3TextField {
   MuiTextField: {
     defaultProps?: ComponentsProps['MuiTextField'];
     styleOverrides?: ComponentsOverrides<Theme>['MuiTextField'];
     variants?: ComponentsVariants['MuiTextField'];
-  }
+  };
 }
 
 export const getTextField = (theme: Theme): M3TextField => {
   const { palette, motion } = theme;
   return {
     MuiTextField: {
-      defaultProps: {
-
-      },
       styleOverrides: {
         root: {
           '&:hover': {
@@ -54,12 +58,39 @@ export const getTextField = (theme: Theme): M3TextField => {
                     borderColor: palette.onErrorContainer.main
                   },
                 }
+              },
+              '&.MuiFilledInput-root': {
+                backgroundColor: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHighest.main, palette.onSurface.main),
+                '&::before': {
+                  borderBottomColor: palette.onSurface.main
+                },
+                '&.Mui-disabled': {
+                  backgroundColor: alpha(palette.onSurface.main, 0.04),
+                },
+                '&.Mui-error': {
+                  '&::before': {
+                    borderBottomColor: palette.onErrorContainer.main
+                  }
+                }
+              },
+              '&.MuiInput-underline': {
+                '&::before': {
+                  borderBottomColor: palette.onSurface.main
+                },
+                '&.Mui-error': {
+                  '&::before': {
+                     borderBottomColor: palette.onErrorContainer.main
+                  }
+                }
               }
             }
           },
           '& .MuiInputLabel-root': {
             '&.MuiFormLabel-colorPrimary': {
               '&.MuiInputLabel-outlined': {
+                color: palette.onSurfaceVariant.main,
+              },
+              '&.MuiInputLabel-filled': {
                 color: palette.onSurfaceVariant.main,
               },
               '&.Mui-focused': {
@@ -126,6 +157,106 @@ export const getTextField = (theme: Theme): M3TextField => {
                 '& .MuiOutlinedInput-notchedOutline': {
                   borderColor: palette.error.main
                 },
+                '& .MuiInputAdornment-positionEnd': {
+                  color: palette.error.main,
+                }
+              }
+            },
+            '&.MuiFilledInput-root': {
+              backgroundColor: palette.surfaceContainerHighest.main,
+              '&::before': {
+                transition: theme.transitions.create(
+                  ['border-bottom-width'],
+                  {
+                    duration: motion.duration.short2,
+                    easing: motion.easing.emphasized.default
+                  },
+                ),
+                borderBottomColor: palette.onSurfaceVariant.main,
+              },
+              '& .MuiInputAdornment-root': {
+                color: palette.onSurfaceVariant.main,
+              },
+              '&.Mui-focused': {
+                '&::after': {
+                  borderBottomWidth: '3px'
+                },
+                '& .MuiInputBase-input': {
+                  caretColor: palette.primary.main,
+                },
+                '&.Mui-error': {
+                  '& .MuiInputBase-input': {
+                    caretColor: palette.error.main,
+                  },
+                  '&::after': {
+                    borderBottomColor: palette.error.main,
+                  }
+                }
+              },
+              '&.Mui-disabled': {
+                backgroundColor: alpha(palette.onSurface.main, 0.04),
+                '&::before': {
+                  borderBottomColor: alpha(palette.onSurface.main, 0.38),
+                  borderBottomStyle: 'solid'
+                },
+                '& .MuiInputAdornment-root': {
+                  color: alpha(palette.onSurface.main, 0.38),
+                },
+                '& .MuiInputBase-input': {
+                  color: alpha(palette.onSurface.main, 0.38),
+                  '-webkit-text-fill-color': alpha(palette.onSurface.main, 0.38),
+                },
+              },
+              '&.Mui-error': {
+                '& .MuiInputAdornment-positionEnd': {
+                  color: palette.error.main,
+                }
+              }
+            },
+            '&.MuiInput-underline': {
+              '&::before': {
+                transition: theme.transitions.create(
+                  ['border-bottom-width'],
+                  {
+                    duration: motion.duration.short2,
+                    easing: motion.easing.emphasized.default
+                  },
+                ),
+                borderBottomColor: palette.onSurfaceVariant.main,
+              },
+              '& .MuiInputAdornment-root': {
+                color: palette.onSurfaceVariant.main,
+              },
+              '&.Mui-focused': {
+                '& .MuiInputBase-input': {
+                  caretColor: palette.primary.main,
+                },
+                '&.Mui-error': {
+                  '& .MuiInputBase-input': {
+                    caretColor: palette.error.main,
+                  },
+                  '&::after': {
+                    borderBottomColor: palette.error.main,
+                  }
+                },
+                '&::after': {
+                  borderBottomWidth: '3px'
+                }
+              },
+              '&.Mui-disabled': {
+                '&::before': {
+                  borderBottomColor: alpha(palette.onSurface.main, 0.38),
+                  borderBottomStyle: 'solid'
+                },
+                '& .MuiInputAdornment-root': {
+                  color: alpha(palette.onSurface.main, 0.38),
+                },
+                '& .MuiInputBase-input': {
+                  color: alpha(palette.onSurface.main, 0.38),
+                  '-webkit-text-fill-color': alpha(palette.onSurface.main, 0.38),
+                },
+              },
+              '&.Mui-error': {
                 '& .MuiInputAdornment-positionEnd': {
                   color: palette.error.main,
                 }
