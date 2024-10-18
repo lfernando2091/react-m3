@@ -17,3 +17,6 @@ export { getAccordion } from './Accordion';
 export { getTypography } from './Typography';
 export { getAlert } from './Alert';
 export { getTextField } from './TextField';
+export { getRadio } from './RadioButton';
+export { getFormControlLabel } from './FormControlLabel';
+export { getFormControl } from './FormControl';

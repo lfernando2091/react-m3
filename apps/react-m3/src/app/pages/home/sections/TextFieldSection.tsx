@@ -6,7 +6,7 @@ export const TextFieldSection = () => {
   return (
     <Stack spacing={3}>
       <Typography variant="h6" fontWeight="bold">
-        Accordion
+        Text Field
       </Typography>
       <Stack direction="column" spacing={2}>
         <TextField

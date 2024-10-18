@@ -147,7 +147,7 @@ export const getTextField = (theme: Theme): M3TextField => {
                 },
                 '& .MuiInputBase-input': {
                   color: alpha(palette.onSurface.main, 0.38),
-                  '-webkit-text-fill-color': alpha(palette.onSurface.main, 0.38),
+                  WebkitTextFillColor: alpha(palette.onSurface.main, 0.38),
                 },
                 '& .MuiOutlinedInput-notchedOutline': {
                   borderColor: alpha(palette.onSurface.main, 0.12),
@@ -204,7 +204,7 @@ export const getTextField = (theme: Theme): M3TextField => {
                 },
                 '& .MuiInputBase-input': {
                   color: alpha(palette.onSurface.main, 0.38),
-                  '-webkit-text-fill-color': alpha(palette.onSurface.main, 0.38),
+                  WebkitTextFillColor: alpha(palette.onSurface.main, 0.38),
                 },
               },
               '&.Mui-error': {
@@ -253,7 +253,7 @@ export const getTextField = (theme: Theme): M3TextField => {
                 },
                 '& .MuiInputBase-input': {
                   color: alpha(palette.onSurface.main, 0.38),
-                  '-webkit-text-fill-color': alpha(palette.onSurface.main, 0.38),
+                  WebkitTextFillColor: alpha(palette.onSurface.main, 0.38),
                 },
               },
               '&.Mui-error': {

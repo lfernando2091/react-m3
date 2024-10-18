@@ -7,7 +7,7 @@ interface M3Fab {
         styleOverrides?: ComponentsOverrides<Theme>['MuiFab'];
         variants?: ComponentsVariants['MuiFab'];
     }
-};
+}
 
 declare module '@mui/material/Fab' {
     interface FabPropsColorOverrides {
