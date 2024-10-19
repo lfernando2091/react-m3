@@ -8,6 +8,9 @@
     "test:react-m3": "npx nx test react-m3",
     "e2e:react-m3": "npx nx e2e react-m3",
     "lint:react-m3": "npx nx lint react-m3",
+
+    "build:m3": "npx nx build m3",
+    "test:m3": "npx nx test m3",
     "lint:m3": "npx nx lint m3"
   },
   "private": true,
