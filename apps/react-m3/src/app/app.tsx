@@ -41,8 +41,9 @@ export const AppStateProvider = ({ children }: AppStateProviderProps) => {
 }
 
 export function App() {
+  const baseName = import.meta.env.VITE_REACT_ROUTER_BASE_PATH;
   return (
-    <BrowserRouter basename="/react-m3">
+    <BrowserRouter basename={baseName}>
       <Router/>
     </BrowserRouter>
   );
