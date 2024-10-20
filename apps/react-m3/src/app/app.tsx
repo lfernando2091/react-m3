@@ -42,7 +42,7 @@ export const AppStateProvider = ({ children }: AppStateProviderProps) => {
 
 export function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/react-m3">
       <Router/>
     </BrowserRouter>
   );
