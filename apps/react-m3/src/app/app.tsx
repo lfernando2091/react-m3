@@ -41,10 +41,8 @@ export const AppStateProvider = ({ children }: AppStateProviderProps) => {
 }
 
 export function App() {
-  const baseName = import.meta.env.VITE_REACT_ROUTER_BASE_PATH;
-  console.log("baseName", baseName);
   return (
-    <BrowserRouter basename={baseName}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Router/>
     </BrowserRouter>
   );
