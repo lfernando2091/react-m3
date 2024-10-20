@@ -4,8 +4,8 @@
   "license": "MIT",
   "scripts": {
     "run:react-m3": "npx nx serve react-m3",
-    "build:react-m3": "npx nx build react-m3 --base=/react-m3 --sourcemap --mode production",
-    "build-dev:react-m3": "npx nx build react-m3 --base=/react-m3 --sourcemap=true",
+    "build:react-m3": "npx nx build react-m3 --base=/react-m3",
+    "build-dev:react-m3": "npx nx build react-m3 --base=/react-m3 --sourcemap=true --mode developmet",
     "test:react-m3": "npx nx test react-m3",
     "e2e:react-m3": "npx nx e2e react-m3",
     "lint:react-m3": "npx nx lint react-m3",
