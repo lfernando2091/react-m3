@@ -12,9 +12,11 @@
 
     "build:m3": "npx nx build m3",
     "test:m3": "npx nx test m3",
-    "lint:m3": "npx nx lint m3"
+    "lint:m3": "npx nx lint m3",
+
+    "publish": "npm publish --access public"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
