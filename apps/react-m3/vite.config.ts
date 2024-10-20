@@ -26,6 +26,7 @@ export default defineConfig({
 
   build: {
     outDir: '../../dist/apps/react-m3',
+    sourcemap: true,
     emptyOutDir: true,
     reportCompressedSize: true,
     commonjsOptions: {
