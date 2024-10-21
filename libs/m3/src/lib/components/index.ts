@@ -20,3 +20,4 @@ export { getTextField } from './TextField';
 export { getRadio } from './RadioButton';
 export { getFormControlLabel } from './FormControlLabel';
 export { getFormControl } from './FormControl';
+export { getCheckbox } from './Checkbox';

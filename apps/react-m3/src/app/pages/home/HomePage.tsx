@@ -13,6 +13,7 @@ import { AccordionSection } from './sections/AccordionSection';
 import { AlertSection } from './sections/AlertSection';
 import { TextFieldSection } from './sections/TextFieldSection';
 import { RadioButtonSection } from './sections/RadioButtonSection';
+import { CheckboxSection } from './sections/CheckboxSection';
 
 export const HomePage = () => {
   return (<>
@@ -23,6 +24,7 @@ export const HomePage = () => {
       <ToggleButtonGroupSection/>
       <FABSection/>
       <SwitchSection/>
+      <CheckboxSection/>
       <TextFieldSection/>
       <RadioButtonSection/>
       <CardSection/>
