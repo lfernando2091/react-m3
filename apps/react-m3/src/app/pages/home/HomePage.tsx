@@ -14,6 +14,7 @@ import { AlertSection } from './sections/AlertSection';
 import { TextFieldSection } from './sections/TextFieldSection';
 import { RadioButtonSection } from './sections/RadioButtonSection';
 import { CheckboxSection } from './sections/CheckboxSection';
+import { PaperSection } from './sections/PaperSection';
 
 export const HomePage = () => {
   return (<>
@@ -28,6 +29,7 @@ export const HomePage = () => {
       <TextFieldSection/>
       <RadioButtonSection/>
       <CardSection/>
+      <PaperSection/>
       <BadgeSection/>
       <AppBarSection/>
       <ListSection/>

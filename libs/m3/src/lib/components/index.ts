@@ -21,3 +21,4 @@ export { getRadio } from './RadioButton';
 export { getFormControlLabel } from './FormControlLabel';
 export { getFormControl } from './FormControl';
 export { getCheckbox } from './Checkbox';
+export { getPaper } from './Paper';

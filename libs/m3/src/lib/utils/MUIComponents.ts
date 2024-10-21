@@ -15,7 +15,7 @@ import {
   getListSubheader,
   getAccordion,
   getTypography,
-  getAlert, getTextField, getRadio, getFormControlLabel, getFormControl, getCheckbox
+  getAlert, getTextField, getRadio, getFormControlLabel, getFormControl, getCheckbox, getPaper
 } from '../components';
 
 type M3Components = { components: Theme['components'] };
@@ -43,7 +43,8 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getRadio(theme),
       ...getFormControlLabel(theme),
       ...getFormControl(theme),
-      ...getCheckbox(theme)
+      ...getCheckbox(theme),
+      ...getPaper(theme),
     }
   } as M3Components
 }
