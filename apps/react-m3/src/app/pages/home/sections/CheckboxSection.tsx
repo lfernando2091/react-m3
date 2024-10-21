@@ -103,8 +103,8 @@ export const CheckboxSection = () => {
     </Stack>
     <Stack direction='row' spacing={2} flexWrap={'wrap'}>
       <Checkbox defaultChecked />
-      <Checkbox />
-      <Checkbox />
+      <Checkbox/>
+      <Checkbox defaultChecked color="error"/>
       <Checkbox disabled />
       <Checkbox disabled checked />
     </Stack>

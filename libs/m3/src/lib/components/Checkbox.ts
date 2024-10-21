@@ -30,12 +30,21 @@ export const getCheckbox = (theme: Theme): M3Checkbox => {
             '&.Mui-checked': {
               '&.MuiCheckbox-colorPrimary': {
                 color: palette.primary.main,
+                '&:hover': {
+                  backgroundColor: alpha(palette.primary.main, StateLayer.Hover),
+                },
+                '&.Mui-focusVisible': {
+                  backgroundColor: alpha(palette.primary.main, StateLayer.Focus),
+                },
               },
-              '&:hover': {
-                backgroundColor: alpha(palette.primary.main, StateLayer.Hover),
-              },
-              '&.Mui-focusVisible': {
-                backgroundColor: alpha(palette.primary.main, StateLayer.Focus),
+              '&.MuiCheckbox-colorError': {
+                color: palette.error.main,
+                '&:hover': {
+                  backgroundColor: alpha(palette.error.main, StateLayer.Hover),
+                },
+                '&.Mui-focusVisible': {
+                  backgroundColor: alpha(palette.error.main, StateLayer.Focus),
+                },
               },
               '&.Mui-disabled': {
                 color: alpha(palette.onSurface.main, 0.38),
