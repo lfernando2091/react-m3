@@ -17,7 +17,6 @@ export const MainContainer = ({ children }: MainContainerProps) => {
     borderTopRightRadius: radiusTop,
     borderBottomLeftRadius: radiusBottom,
     borderBottomRightRadius: radiusBottom,
-    //m: isSxUp ? 2 : 0,
     height: isSxUp ? 'auto' : 1,
     mt: 0,
     mb: isSxUp ? 2 : 0,

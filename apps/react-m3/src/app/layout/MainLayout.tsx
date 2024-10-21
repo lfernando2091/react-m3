@@ -51,7 +51,7 @@ export const MainLayout = () => {
       <Box sx={containerStyles}>
         <MainAppBar />
         <MainContainer>
-          <Outlet />
+          <Outlet/>
         </MainContainer>
       </Box>
     </Box>

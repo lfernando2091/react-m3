@@ -22,3 +22,4 @@ export { getFormControlLabel } from './FormControlLabel';
 export { getFormControl } from './FormControl';
 export { getCheckbox } from './Checkbox';
 export { getPaper } from './Paper';
+export { revealUpAnimationKFrames, RevealUpPaper } from './Animation';
