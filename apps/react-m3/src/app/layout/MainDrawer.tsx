@@ -22,7 +22,7 @@ const categories = [
     id: 'Build',
     children: [
       {
-        id: 'Empty',
+        id: 'empty',
         icon: <NoteIcon />,
         link: '/empty'
       }

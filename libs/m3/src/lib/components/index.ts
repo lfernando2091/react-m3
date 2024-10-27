@@ -23,3 +23,4 @@ export { getFormControl } from './FormControl';
 export { getCheckbox } from './Checkbox';
 export { getPaper } from './Paper';
 export { revealUpAnimationKFrames, RevealUpPaper } from './Animation';
+export { getTabs } from './Tabs';
