@@ -25,7 +25,6 @@ export const getTabs = (theme: Theme): M3Tabs => {
       styleOverrides: {
         root: {
           borderBottom: `1px solid ${palette.surfaceContainerHighest.main}`,
-          // backgroundColor: palette.surface.main,
         }
       },
       variants: [

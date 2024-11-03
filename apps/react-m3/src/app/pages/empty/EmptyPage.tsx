@@ -1,7 +1,7 @@
-import { SwitchSection } from '../home/sections/TabSection';
+import { DividerSection } from '../home/sections/DividerSection';
 
 export const EmptyPage = () => {
   return (<>
-    <SwitchSection/>
+    <DividerSection/>
   </>)
 }

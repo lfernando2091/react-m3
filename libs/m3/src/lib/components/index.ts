@@ -24,3 +24,5 @@ export { getCheckbox } from './Checkbox';
 export { getPaper } from './Paper';
 export { revealUpAnimationKFrames, RevealUpPaper } from './Animation';
 export { getTabs } from './Tabs';
+export { getDialog } from './Dialog';
+export { getDivider } from './Divider';

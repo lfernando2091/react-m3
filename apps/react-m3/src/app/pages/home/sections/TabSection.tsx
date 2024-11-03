@@ -25,7 +25,7 @@ function CustomTabPanel(props: TabPanelProps) {
   );
 }
 
-export const SwitchSection = () => {
+export const TabsSection = () => {
   const [value, setValue] = useState(0);
 
   const handleChange = (event: SyntheticEvent, newValue: number) => {
@@ -34,7 +34,7 @@ export const SwitchSection = () => {
 
   return (<Stack spacing={3}>
     <Typography variant="h6" fontWeight="bold">
-      Switch
+      Tabs
     </Typography>
     <Stack direction="row" spacing={1} alignItems={'center'}>
       <Box sx={{ width: '100%' }}>
