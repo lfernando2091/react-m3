@@ -20,3 +20,7 @@ export { getTextField } from './TextField';
 export { getRadio } from './RadioButton';
 export { getFormControlLabel } from './FormControlLabel';
 export { getFormControl } from './FormControl';
+export { getCheckbox } from './Checkbox';
+export { getPaper } from './Paper';
+export { revealUpAnimationKFrames, RevealUpPaper } from './Animation';
+export { getTabs } from './Tabs';

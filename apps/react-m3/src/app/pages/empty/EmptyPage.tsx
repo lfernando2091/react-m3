@@ -1,4 +1,7 @@
+import { SwitchSection } from '../home/sections/TabSection';
 
 export const EmptyPage = () => {
-  return (<>Empty page</>)
+  return (<>
+    <SwitchSection/>
+  </>)
 }

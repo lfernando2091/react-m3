@@ -7,7 +7,6 @@ export type MainContainerProps = {
 
 export const MainContainer = ({ children }: MainContainerProps) => {
   const theme = useTheme();
-  const isSmUp = useMediaQuery(theme.breakpoints.up('md'));
   const isSxUp = useMediaQuery(theme.breakpoints.up('sm'));
   const radiusTop = 30;
   const radiusBottom = isSxUp ? 25 : 0;
@@ -18,12 +17,11 @@ export const MainContainer = ({ children }: MainContainerProps) => {
     borderTopRightRadius: radiusTop,
     borderBottomLeftRadius: radiusBottom,
     borderBottomRightRadius: radiusBottom,
-    //m: isSxUp ? 2 : 0,
     height: isSxUp ? 'auto' : 1,
     mt: 0,
     mb: isSxUp ? 2 : 0,
     mr: isSxUp ? 2 : 0,
-    ml: isSxUp ? (isSmUp ? 0 : 2) : 0
+    ml: isSxUp ? 2 : 0
   };
 
   return (
