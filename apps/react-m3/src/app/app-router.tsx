@@ -14,6 +14,7 @@ import { AccordionPage } from './pages/accordion/AccordionPage';
 import { AlertPage } from './pages/alert/AlertPage';
 import { TabsPage } from './pages/tabs/TabsPage';
 import { DividerPage } from './pages/divider/DividerPage';
+import { DialogPage } from './pages/dialog/DialogPage';
 
 export const Router = () => {
   return (
@@ -33,6 +34,7 @@ export const Router = () => {
         <Route path="alert" element={<AlertPage/>}/>
         <Route path="tabs" element={<TabsPage/>}/>
         <Route path="divider" element={<DividerPage/>}/>
+        <Route path="dialog" element={<DialogPage/>}/>
         <Route path="empty" element={<EmptyPage/>}/>
       </Route>
     </Routes>

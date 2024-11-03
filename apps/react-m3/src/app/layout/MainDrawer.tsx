@@ -26,6 +26,7 @@ import ExpandIcon from '@mui/icons-material/Expand';
 import MessageIcon from '@mui/icons-material/Message';
 import TabIcon from '@mui/icons-material/Tab';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -98,6 +99,11 @@ const categories = [
         id: 'divider',
         icon: <HorizontalRuleIcon />,
         link: '/divider'
+      },
+      {
+        id: 'dialog',
+        icon: <ContactSupportIcon />,
+        link: '/dialog'
       }
     ],
   },

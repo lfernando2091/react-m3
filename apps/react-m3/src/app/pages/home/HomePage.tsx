@@ -75,6 +75,11 @@ const MainMenu: MenuItem[] = [
     title: "Divider",
     description: "Divider component",
     url: "/divider"
+  },
+  {
+    title: "Dialog",
+    description: "Dialog component",
+    url: "/dialog"
   }
 ]
 
