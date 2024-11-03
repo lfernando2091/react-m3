@@ -6,7 +6,7 @@ export const TextFieldSection = () => {
   return (
     <Stack spacing={3}>
       <Typography variant="h6" fontWeight="bold">
-        Text Field
+        Text Field Outlined
       </Typography>
       <Stack direction="column" spacing={2}>
         <TextField
@@ -78,6 +78,11 @@ export const TextFieldSection = () => {
             },
           }}
         />
+      </Stack>
+      <Typography variant="h6" fontWeight="bold">
+        Text Field Filled
+      </Typography>
+      <Stack direction="column" spacing={2}>
         <TextField label="Filled" variant="filled"
                    helperText="My helper text"
                    defaultValue="Abcd"
@@ -138,6 +143,11 @@ export const TextFieldSection = () => {
             },
           }}
         />
+      </Stack>
+      <Typography variant="h6" fontWeight="bold">
+        Text Field Standard
+      </Typography>
+      <Stack direction="column" spacing={2}>
         <TextField label="Standard" variant="standard"
                    helperText="My helper text"
                    defaultValue="Abcd"

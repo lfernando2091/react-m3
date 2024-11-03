@@ -18,9 +18,6 @@ export const getDrawer = (theme: Theme): M3Drawer => {
         }
       },
       styleOverrides: {
-        root: {
-
-        },
         docked: {
           '&.MuiDrawer-docked .MuiPaper-root': {
             transition: theme.transitions.create(

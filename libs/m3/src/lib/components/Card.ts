@@ -24,14 +24,15 @@ export const getCard = (theme: Theme): M3Card => {
       styleOverrides: {
         root: {
           borderRadius: shape.corner.medium.all,
-          padding: '10px 16px'
+          '& .MuiCardContent-root': {
+            padding: '10px 16px'
+          }
         }
       },
       variants: [
         {
           props: { variant: 'elevation' },
           style: {
-            boxShadow: elevation.level1,
             backgroundColor: palette.surfaceContainerLow.main,
             transition: theme.transitions.create(
               ['background-color', 'box-shadow', 'border-color', 'color'],
@@ -40,18 +41,26 @@ export const getCard = (theme: Theme): M3Card => {
                 easing: motion.easing.emphasized.default
               },
             ),
-            '&.Mui-clickable:hover': {
-              background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerLow.main, palette.onSurface.main),
-              boxShadow: elevation.level2,
-              cursor: 'pointer',
-            },
-            '&.Mui-clickable:focus': {
+            '&:has(> .MuiCardActionArea-root)': {
               boxShadow: elevation.level1,
-              background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerLow.main, palette.onSurface.main)
-            },
-            '&.Mui-clickable:active': {
-              boxShadow: elevation.level1,
-              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerLow.main, palette.onSurface.main)
+              '&:hover': {
+                boxShadow: elevation.level2,
+              },
+              '&:focus': {
+                boxShadow: elevation.level1,
+              },
+              '&:active': {
+                boxShadow: elevation.level1,
+              },
+              '& .MuiCardActionArea-root:hover': {
+                backgroundColor: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerLow.main, palette.onSurface.main)
+              },
+              '& .MuiCardActionArea-root:focus': {
+                backgroundColor: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerLow.main, palette.onSurface.main)
+              },
+              '& .MuiCardActionArea-root:active': {
+                backgroundColor: getStateLayerColor(StateLayer.Press, palette.surfaceContainerLow.main, palette.onSurface.main)
+              }
             },
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.surfaceContainerLow.main, 0.38),
@@ -64,7 +73,6 @@ export const getCard = (theme: Theme): M3Card => {
         {
           props: { variant: 'filled' },
           style: {
-            boxShadow: elevation.level0,
             backgroundColor: palette.surfaceContainerHighest.main,
             transition: theme.transitions.create(
               ['background-color', 'box-shadow', 'border-color', 'color'],
@@ -73,18 +81,26 @@ export const getCard = (theme: Theme): M3Card => {
                 easing: motion.easing.emphasized.default
               },
             ),
-            '&.Mui-clickable:hover': {
-              background: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHighest.main, palette.onSurface.main),
-              boxShadow: elevation.level1,
-              cursor: 'pointer',
-            },
-            '&.Mui-clickable:focus': {
+            '&:has(> .MuiCardActionArea-root)': {
               boxShadow: elevation.level0,
-              background: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerHighest.main, palette.onSurface.main)
-            },
-            '&.Mui-clickable:active': {
-              boxShadow: elevation.level1,
-              background: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHighest.main, palette.onSurface.main)
+              '&:hover': {
+                boxShadow: elevation.level1,
+              },
+              '&:focus': {
+                boxShadow: elevation.level0,
+              },
+              '&:active': {
+                boxShadow: elevation.level1,
+              },
+              '& .MuiCardActionArea-root:hover': {
+                backgroundColor: getStateLayerColor(StateLayer.Hover, palette.surfaceContainerHighest.main, palette.onSurface.main),
+              },
+              '& .MuiCardActionArea-root:focus': {
+                backgroundColor: getStateLayerColor(StateLayer.Focus, palette.surfaceContainerHighest.main, palette.onSurface.main)
+              },
+              '& .MuiCardActionArea-root:active': {
+                backgroundColor: getStateLayerColor(StateLayer.Press, palette.surfaceContainerHighest.main, palette.onSurface.main)
+              }
             },
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.surfaceContainerHighest.main, 0.38),
@@ -97,7 +113,6 @@ export const getCard = (theme: Theme): M3Card => {
         {
           props: { variant: 'outlined' },
           style: {
-            boxShadow: elevation.level0,
             backgroundColor: palette.surface.main,
             borderColor: palette.outlineVariant.main,
             transition: theme.transitions.create(
@@ -107,18 +122,26 @@ export const getCard = (theme: Theme): M3Card => {
                 easing: motion.easing.emphasized.default
               },
             ),
-            '&.Mui-clickable:hover': {
-              background: getStateLayerColor(StateLayer.Hover, palette.surface.main, palette.onSurface.main),
-              boxShadow: elevation.level1,
-              cursor: 'pointer',
-            },
-            '&.Mui-clickable:focus': {
+            '&:has(> .MuiCardActionArea-root)': {
               boxShadow: elevation.level0,
-              background: getStateLayerColor(StateLayer.Focus, palette.surface.main, palette.onSurface.main)
-            },
-            '&.Mui-clickable:active': {
-              boxShadow: elevation.level2,
-              background: getStateLayerColor(StateLayer.Press, palette.surface.main, palette.onSurface.main)
+              '&:hover': {
+                boxShadow: elevation.level1,
+              },
+              '&:focus': {
+                boxShadow: elevation.level0,
+              },
+              '&:active': {
+                boxShadow: elevation.level2,
+              },
+              '& .MuiCardActionArea-root:hover': {
+                backgroundColor: getStateLayerColor(StateLayer.Hover, palette.surface.main, palette.onSurface.main),
+              },
+              '& .MuiCardActionArea-root:focus': {
+                backgroundColor: getStateLayerColor(StateLayer.Focus, palette.surface.main, palette.onSurface.main)
+              },
+              '& .MuiCardActionArea-root:active': {
+                backgroundColor: getStateLayerColor(StateLayer.Press, palette.surface.main, palette.onSurface.main)
+              }
             },
             '&.Mui-disabled': {
               backgroundColor: alpha(palette.surface.main, 0.38),

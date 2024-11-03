@@ -10,33 +10,95 @@ import {
   Typography
 } from '@mui/material';
 
-import PeopleIcon from '@mui/icons-material/PeopleOutline';
-import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActualOutlined';
-import PublicIcon from '@mui/icons-material/PublicOutlined';
-import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernetOutlined';
-import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponentOutlined';
 import HomeIcon from '@mui/icons-material/Home';
 import HomeIconOutlined from '@mui/icons-material/HomeOutlined';
+import NoteIcon from '@mui/icons-material/Note';
+import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
+import ToggleOffIcon from '@mui/icons-material/ToggleOff';
+import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import TextFieldsIcon from '@mui/icons-material/TextFields';
+import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
+import ViewAgendaIcon from '@mui/icons-material/ViewAgenda';
+import MarkChatUnreadIcon from '@mui/icons-material/MarkChatUnread';
+import DragHandleIcon from '@mui/icons-material/DragHandle';
+import ListIcon from '@mui/icons-material/List';
+import ExpandIcon from '@mui/icons-material/Expand';
+import MessageIcon from '@mui/icons-material/Message';
+import TabIcon from '@mui/icons-material/Tab';
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 
 const categories = [
   {
-    id: 'Build',
+    id: 'Components',
     children: [
       {
-        id: 'Authentication',
-        icon: <PeopleIcon />,
+        id: 'buttons',
+        icon: <KeyboardCommandKeyIcon />,
+        link: '/buttons'
       },
-      { id: 'Database', icon: <PeopleIcon /> },
-      { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
-      { id: 'Hosting', icon: <PublicIcon /> },
-      { id: 'Functions', icon: <SettingsEthernetIcon /> },
       {
-        id: 'Machine learning',
-        icon: <SettingsInputComponentIcon />,
+        id: 'switch',
+        icon: <ToggleOffIcon />,
+        link: '/switch'
       },
+      {
+        id: 'checkbox',
+        icon: <CheckBoxIcon />,
+        link: '/checkbox'
+      },
+      {
+        id: 'text-field',
+        icon: <TextFieldsIcon />,
+        link: '/text-field'
+      },
+      {
+        id: 'radio-button',
+        icon: <RadioButtonCheckedIcon />,
+        link: '/radio-button'
+      },
+      {
+        id: 'cards',
+        icon: <ViewAgendaIcon />,
+        link: '/cards'
+      },
+      {
+        id: 'badge',
+        icon: <MarkChatUnreadIcon />,
+        link: '/badge'
+      },
+      {
+        id: 'app-bar',
+        icon: <DragHandleIcon />,
+        link: '/app-bar'
+      },
+      {
+        id: 'lists',
+        icon: <ListIcon />,
+        link: '/lists'
+      },
+      {
+        id: 'accordion',
+        icon: <ExpandIcon />,
+        link: '/accordion'
+      },
+      {
+        id: 'alert',
+        icon: <MessageIcon />,
+        link: '/alert'
+      },
+      {
+        id: 'tabs',
+        icon: <TabIcon />,
+        link: '/tabs'
+      },
+      {
+        id: 'divider',
+        icon: <HorizontalRuleIcon />,
+        link: '/divider'
+      }
     ],
   },
 ];
@@ -76,9 +138,9 @@ export const MainDrawer = (props: DrawerProps) => {
       </List>
         {categories.map(({ id, children }) => (
           <List key={id} subheader={<ListSubheader>{id}</ListSubheader>}>
-            {children.map(({ id: childId, icon }) => (
+            {children.map(({ id: childId, icon, link }) => (
               <ListItem key={childId}>
-                <ListItemButton selected={selectedIndex === childId} onClick={() => handleListItemClick(childId)}>
+                <ListItemButton component={Link} selected={selectedIndex === childId} to={link} onClick={() => handleListItemClick(childId)}>
                   <ListItemIcon>{icon}</ListItemIcon>
                   <ListItemText>{childId}</ListItemText>
                 </ListItemButton>

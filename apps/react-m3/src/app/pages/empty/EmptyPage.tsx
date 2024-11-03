@@ -1,4 +1,5 @@
-
 export const EmptyPage = () => {
-  return (<>Empty page</>)
+  return (<>
+    No Content
+  </>)
 }
