@@ -1,6 +1,6 @@
 {
   "name": "@react-m3/m3",
-  "version": "0.0.0-pre-alpha.2",
+  "version": "0.0.1-pre-alpha",
   "main": "./index.js",
   "types": "./index.d.ts",
   "exports": {
