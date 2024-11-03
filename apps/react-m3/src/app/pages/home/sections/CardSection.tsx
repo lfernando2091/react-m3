@@ -11,7 +11,7 @@ import {
   Button,
   IconButton,
   Avatar,
-  Theme
+  Theme, CardActionArea
 } from '@mui/material';
 
 import FavoriteIcon from "@mui/icons-material/FavoriteOutlined";
@@ -77,44 +77,49 @@ export const CardSection = () => {
         </Card>
       </Stack>
       <Stack direction='row' spacing={2} flexWrap={'wrap'}>
-        <Card variant="elevation" className="Mui-clickable">
-          <CardContent>
-            <Typography gutterBottom variant="h5">
-              Play relaxing songs
-            </Typography>
-            <Typography variant="body2">
-              From your recent favorites
-            </Typography>
-          </CardContent>
+        <Card variant="elevation">
+          <CardActionArea>
+            <CardContent>
+              <Typography gutterBottom variant="h5">
+                Play relaxing songs
+              </Typography>
+              <Typography variant="body2">
+                From your recent favorites
+              </Typography>
+            </CardContent>
+          </CardActionArea>
           <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button variant="filled" size="small">Get started</Button>
           </CardActions>
         </Card>
-        <Card variant="filled" className="Mui-clickable">
-          <CardContent>
-            <Typography gutterBottom variant="h5" >
-              Play relaxing songs
-            </Typography>
-            <Typography variant="body2">
-              From your recent favorites
-            </Typography>
-          </CardContent>
+        <Card variant="filled">
+          <CardActionArea>
+            <CardContent>
+              <Typography gutterBottom variant="h5" >
+                Play relaxing songs
+              </Typography>
+              <Typography variant="body2">
+                From your recent favorites
+              </Typography>
+            </CardContent>
+          </CardActionArea>
           <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-            {/* @ts-expect-error: surfaceContainer declared with type def */}
-            <Button variant="outlined" sx={{ background: (theme: Theme) => theme.palette.surfaceContainer.main }} >
+            <Button variant="outlined">
               Get started
             </Button>
           </CardActions>
         </Card>
-        <Card variant="outlined" className="Mui-clickable">
-          <CardContent>
-            <Typography gutterBottom variant="h5" >
-              Play relaxing songs
-            </Typography>
-            <Typography variant="body2">
-              From your recent favorites
-            </Typography>
-          </CardContent>
+        <Card variant="outlined">
+          <CardActionArea>
+            <CardContent>
+              <Typography gutterBottom variant="h5" >
+                Play relaxing songs
+              </Typography>
+              <Typography variant="body2">
+                From your recent favorites
+              </Typography>
+            </CardContent>
+          </CardActionArea>
           <CardActions sx={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Button variant="tonal" size="small">Get started</Button>
           </CardActions>
@@ -123,30 +128,30 @@ export const CardSection = () => {
       <Stack direction='row' spacing={2} flexWrap={'wrap'}>
         <Card variant="elevation" className="Mui-disabled">
           <CardContent>
-            <Typography gutterBottom variant="h5">
+            <Typography gutterBottom variant="h5" color="inherit">
               Play relaxing songs
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" color="inherit">
               From your recent favorites
             </Typography>
           </CardContent>
         </Card>
         <Card variant="filled" className="Mui-disabled">
           <CardContent>
-            <Typography gutterBottom variant="h5">
+            <Typography gutterBottom variant="h5" color="inherit">
               Play relaxing songs
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" color="inherit">
               From your recent favorites
             </Typography>
           </CardContent>
         </Card>
         <Card variant="outlined" className="Mui-disabled">
           <CardContent>
-            <Typography gutterBottom variant="h5">
+            <Typography gutterBottom variant="h5" color="inherit">
               Play relaxing songs
             </Typography>
-            <Typography variant="body2">
+            <Typography variant="body2" color="inherit">
               From your recent favorites
             </Typography>
           </CardContent>
