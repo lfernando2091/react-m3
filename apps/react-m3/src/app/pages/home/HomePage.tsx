@@ -1,7 +1,109 @@
 import { BaseColorView } from './sections/BaseColorSection';
 import { useAppContext } from '../../@core/AppContext';
-import { Card, CardContent, FormControlLabel, Switch, Typography } from '@mui/material';
+import { Card, CardActionArea, CardContent, FormControlLabel, Switch, Typography } from '@mui/material';
 import Grid from '@mui/material/Grid2';
+import { useNavigate } from 'react-router-dom';
+
+type MenuItem = {
+  title: string;
+  description: string;
+  url: string;
+}
+
+const MainMenu: MenuItem[] = [
+  {
+    title: "Buttons",
+    description: "Standard buttons, Icon buttons, Toggle buttons, Segmented buttons, Floating Actions buttons",
+    url: "/buttons"
+  },
+  {
+    title: "Switch",
+    description: "Switch component",
+    url: "/switch"
+  },
+  {
+    title: "Checkbox",
+    description: "Checkbox component",
+    url: "/checkbox"
+  },
+  {
+    title: "Text Field",
+    description: "Text Field outlined, filled and standard component",
+    url: "/text-field"
+  },
+  {
+    title: "Radio Button",
+    description: "Radio Button component",
+    url: "/radio-button"
+  },
+  {
+    title: "Cards",
+    description: "Cards and Papers component",
+    url: "/cards"
+  },
+  {
+    title: "Badge",
+    description: "Badge component",
+    url: "/badge"
+  },
+  {
+    title: "App Bar",
+    description: "App Bar component",
+    url: "/app-bar"
+  },
+  {
+    title: "List",
+    description: "List component",
+    url: "/lists"
+  },
+  {
+    title: "Accordion",
+    description: "Accordion component",
+    url: "/accordion"
+  },
+  {
+    title: "Alert",
+    description: "Alert message component",
+    url: "/alert"
+  },
+  {
+    title: "Tabs",
+    description: "Tabs primary and secondary component",
+    url: "/tabs"
+  },
+  {
+    title: "Divider",
+    description: "Divider component",
+    url: "/divider"
+  }
+]
+
+type MenuItemCard = {
+  data: MenuItem
+}
+
+const MenuItemCard = ({ data }: MenuItemCard) => {
+  const nav = useNavigate();
+
+  const onClickItem = () => {
+    nav(data.url)
+  }
+
+  return (
+    <Card variant="elevation">
+      <CardActionArea onClick={onClickItem}>
+        <CardContent>
+          <Typography gutterBottom variant="h5">
+            { data.title }
+          </Typography>
+          <Typography variant="body2">
+            { data.description }
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  )
+}
 
 export const HomePage = () => {
   const { lightMode, switchThemeMode } = useAppContext();
@@ -21,24 +123,9 @@ export const HomePage = () => {
       Supported components
     </Typography >
     <Grid container spacing={2}>
-      <Grid size={4}>
-        <Card variant="outlined" className="Mui-clickable">
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Buttons
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-      <Grid size={4}>
-        <Card variant="outlined" className="Mui-clickable">
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Switch
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
+      {MainMenu.map((item: MenuItem, i: number) => (
+        <Grid size={4} key={i}><MenuItemCard data={item}/></Grid>
+      ))}
     </Grid>
   </>)
 }

@@ -98,11 +98,6 @@ const categories = [
         id: 'divider',
         icon: <HorizontalRuleIcon />,
         link: '/divider'
-      },
-      {
-        id: 'empty',
-        icon: <NoteIcon />,
-        link: '/empty'
       }
     ],
   },
