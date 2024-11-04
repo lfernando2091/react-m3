@@ -80,6 +80,11 @@ const MainMenu: MenuItem[] = [
     title: "Dialog",
     description: "Dialog component",
     url: "/dialog"
+  },
+  {
+    title: "Snackbar",
+    description: "Snackbar component",
+    url: "/snackbar"
   }
 ]
 
