@@ -15,6 +15,7 @@ import { AlertPage } from './pages/alert/AlertPage';
 import { TabsPage } from './pages/tabs/TabsPage';
 import { DividerPage } from './pages/divider/DividerPage';
 import { DialogPage } from './pages/dialog/DialogPage';
+import { SnackbarPage } from './pages/snackbar/SnackbarPage';
 
 export const Router = () => {
   return (
@@ -35,6 +36,7 @@ export const Router = () => {
         <Route path="tabs" element={<TabsPage/>}/>
         <Route path="divider" element={<DividerPage/>}/>
         <Route path="dialog" element={<DialogPage/>}/>
+        <Route path="snackbar" element={<SnackbarPage/>}/>
         <Route path="empty" element={<EmptyPage/>}/>
       </Route>
     </Routes>

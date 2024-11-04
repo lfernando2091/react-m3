@@ -27,6 +27,7 @@ import MessageIcon from '@mui/icons-material/Message';
 import TabIcon from '@mui/icons-material/Tab';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -104,6 +105,11 @@ const categories = [
         id: 'dialog',
         icon: <ContactSupportIcon />,
         link: '/dialog'
+      },
+      {
+        id: 'snackbar',
+        icon: <NotificationsActiveIcon />,
+        link: '/snackbar'
       }
     ],
   },

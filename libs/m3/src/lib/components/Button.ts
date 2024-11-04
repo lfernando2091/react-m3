@@ -13,8 +13,7 @@ declare module '@mui/material/Button' {
   }
 
   interface ButtonPropsColorOverrides {
-    tertiary: true;
-    surface: true;
+    inverse: true;
   }
 }
 
@@ -165,6 +164,24 @@ export const getButton = (theme: Theme): M3Button => {
               backgroundColor: getStateLayerColor(StateLayer.Press, palette.surface.main, palette.primary.main),
             },
           }
+        },
+        {
+          props: { variant: 'text', color: 'inverse' },
+          style: {
+            color: palette.inversePrimary.main,
+            '&.Mui-disabled': {
+              color: alpha(palette.inverseOnSurface.main, 0.38),
+            },
+            '&:hover': {
+              backgroundColor: alpha(palette.inversePrimary.main, StateLayer.Hover),
+            },
+            '&:focus': {
+              backgroundColor: alpha(palette.inversePrimary.main, StateLayer.Focus),
+            },
+            '&:active': {
+              backgroundColor: alpha(palette.inversePrimary.main, StateLayer.Press),
+            },
+          },
         }
       ]
     }
