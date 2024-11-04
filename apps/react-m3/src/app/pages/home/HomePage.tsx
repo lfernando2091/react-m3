@@ -134,7 +134,7 @@ export const HomePage = () => {
     </Typography >
     <Grid container spacing={2}>
       {MainMenu.map((item: MenuItem, i: number) => (
-        <Grid size={4} key={i}><MenuItemCard data={item}/></Grid>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 6, xl: 4 }} key={i}><MenuItemCard data={item}/></Grid>
       ))}
     </Grid>
   </>)
