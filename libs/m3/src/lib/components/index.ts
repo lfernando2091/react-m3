@@ -27,3 +27,4 @@ export { getTabs } from './Tabs';
 export { getDialog } from './Dialog';
 export { getDivider } from './Divider';
 export { getSnackbar } from './Snackbar';
+export { getMenu } from './Menu';

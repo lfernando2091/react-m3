@@ -28,6 +28,7 @@ import TabIcon from '@mui/icons-material/Tab';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import StickyNote2Icon from '@mui/icons-material/StickyNote2';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -110,6 +111,11 @@ const categories = [
         id: 'snackbar',
         icon: <NotificationsActiveIcon />,
         link: '/snackbar'
+      },
+      {
+        id: 'menu',
+        icon: <StickyNote2Icon />,
+        link: '/menu'
       }
     ],
   },
