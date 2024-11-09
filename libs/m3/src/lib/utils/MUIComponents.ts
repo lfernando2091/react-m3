@@ -24,7 +24,7 @@ import {
   getPaper,
   getTabs,
   getDialog,
-  getDivider, getSnackbar, getMenu
+  getDivider, getSnackbar, getMenu, getNavigationRail
 } from '../components';
 
 type M3Components = { components: Theme['components'] };
@@ -59,6 +59,7 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getDivider(theme),
       ...getSnackbar(theme),
       ...getMenu(theme),
+      ...getNavigationRail(theme)
     }
   } as M3Components
 }

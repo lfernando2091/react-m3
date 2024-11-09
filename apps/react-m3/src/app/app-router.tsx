@@ -17,6 +17,7 @@ import { DividerPage } from './pages/divider/DividerPage';
 import { DialogPage } from './pages/dialog/DialogPage';
 import { SnackbarPage } from './pages/snackbar/SnackbarPage';
 import { MenuPage } from './pages/menu/MenuPage';
+import { NavigationRailPage } from './pages/navigation-rail/NavigationRailPage';
 
 export const Router = () => {
   return (
@@ -39,6 +40,7 @@ export const Router = () => {
         <Route path="dialog" element={<DialogPage/>}/>
         <Route path="snackbar" element={<SnackbarPage/>}/>
         <Route path="menu" element={<MenuPage/>}/>
+        <Route path="navigation-rail" element={<NavigationRailPage/>}/>
         <Route path="empty" element={<EmptyPage/>}/>
       </Route>
     </Routes>
