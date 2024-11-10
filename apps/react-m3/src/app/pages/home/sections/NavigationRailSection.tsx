@@ -1,6 +1,11 @@
 import { Stack, Typography } from '@mui/material';
-import { NavigationRail } from '@react-m3/m3';
+import { NavigationRail, NavItem } from '@react-m3/m3';
 import EditIcon from '@mui/icons-material/EditTwoTone';
+import TextsmsIcon from '@mui/icons-material/Textsms';
+import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
+import PhoneIcon from '@mui/icons-material/Phone';
+import TelegramIcon from '@mui/icons-material/Telegram';
+import { Link } from 'react-router-dom';
 
 export const NavigationRailSection = () => {
   return (
@@ -16,24 +21,18 @@ export const NavigationRailSection = () => {
           actionButtonIcon={<EditIcon/>}
           menuIcon
         >
-          <h4>1</h4>
-          <h4>1</h4>
-          <h4>1</h4>
-          <h4>1</h4>
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
-          {/*<h4>1</h4>*/}
+          <NavItem label="Message" component={Link} to='/' selected>
+            <TextsmsIcon/>
+          </NavItem>
+          <NavItem label="Mic" href="/">
+            <HeadsetMicIcon/>
+          </NavItem>
+          <NavItem label="Phone">
+            <PhoneIcon/>
+          </NavItem>
+          <NavItem label="Telegram">
+            <TelegramIcon/>
+          </NavItem>
         </NavigationRail>
       </Stack>
     </Stack>

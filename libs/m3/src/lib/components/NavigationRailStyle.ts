@@ -11,6 +11,10 @@ type Theme = Omit<MuiTheme, 'components'>;
 declare module '@mui/material/styles' {
   export interface NavigationRailClasses {
     root: string;
+    bottomContent: string;
+    mainContent: string;
+    menu: string;
+    navigation: string;
   }
   type MenuClassKey = keyof NavigationRailClasses;
 

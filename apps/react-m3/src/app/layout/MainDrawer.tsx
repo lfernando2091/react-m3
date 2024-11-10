@@ -12,7 +12,6 @@ import {
 
 import HomeIcon from '@mui/icons-material/Home';
 import HomeIconOutlined from '@mui/icons-material/HomeOutlined';
-import NoteIcon from '@mui/icons-material/Note';
 import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import ToggleOffIcon from '@mui/icons-material/ToggleOff';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -29,6 +28,7 @@ import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
+import NavigationIcon from '@mui/icons-material/Navigation';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -116,6 +116,11 @@ const categories = [
         id: 'menu',
         icon: <StickyNote2Icon />,
         link: '/menu'
+      },
+      {
+        id: 'navigation-rail',
+        icon: <NavigationIcon />,
+        link: '/navigation-rail'
       }
     ],
   },

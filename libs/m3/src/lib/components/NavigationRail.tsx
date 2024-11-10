@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { forwardRef, ReactNode, MouseEvent } from 'react';
+import { forwardRef, ReactNode } from 'react';
 import { Fab, useThemeProps } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { IconButton } from './IconButton';
@@ -38,7 +38,7 @@ const NavigationRailRoot = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    width: '80px',
+    width: '88px',
     height: '100%',
     backgroundColor: palette.surface.main,
     overflowY: 'auto'
@@ -113,7 +113,7 @@ const alignmentName = (alignment?: Alignment) => {
 }
 
 export const NavigationRail = forwardRef<HTMLDivElement, NavigationRailProps>(
-  function Stat(inProps, ref) {
+  function NavigationRail(inProps, ref) {
     const props = useThemeProps({ props: inProps, name: COMPONENT_NAME });
     const { alignment,
       bottomContent,

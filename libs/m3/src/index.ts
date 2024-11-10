@@ -8,4 +8,7 @@ export { IconButton, ToggleButton, revealUpAnimationKFrames, RevealUpPaper } fro
 
 export { getDesignTokens, getPalette, getTheme } from "./lib/utils/Utils";
 export { ThemeHandler } from "./lib/context/ThemeHandler";
-export { NavigationRail } from "./lib/components";
+
+export { NavigationRail, NavItem } from "./lib/components";
+
+export type { NavItemProps } from "./lib/components";
