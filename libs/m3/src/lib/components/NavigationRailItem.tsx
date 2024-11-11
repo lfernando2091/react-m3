@@ -1,9 +1,10 @@
 import { styled } from '@mui/material/styles';
-import { forwardRef, ReactNode, ElementType } from 'react';
+import { forwardRef, ReactNode, ElementType, MouseEvent } from 'react';
 import { alpha, useThemeProps } from '@mui/material';
 import { getStateLayerColor, StateLayer } from '../utils/StateLayerColor';
 
 const COMPONENT_NAME = "MuiNavItem";
+const simpleMethod = (_event: MouseEvent<HTMLAnchorElement>) => { /* empty */  }
 
 export interface NavItemProps {
   component?: ElementType;
@@ -12,31 +13,24 @@ export interface NavItemProps {
   href?: string;
   to?: string;
   selected?: boolean;
+  onClick?: (event?: MouseEvent<HTMLAnchorElement>) => void;
 }
 
 interface NavItemOwnerState extends NavItemProps {
- myProp?: string;
+ buttonStyle?: boolean;
 }
 
 interface OwnerStateProps {
   ownerState: NavItemOwnerState
 }
 
-const NavItemButtonRoot = styled('button', {
-  name: COMPONENT_NAME,
-  slot: 'root',
-})<OwnerStateProps>(({ theme }) => {
-  const  { palette } = theme;
-  return {
-    display: 'flex'
-  };
-});
+const radialGradient = (backgroundColor: string) => `radial-gradient(circle, transparent 1%, ${backgroundColor} 1%)`;
 
 const NavItemRoot = styled('a', {
   name: COMPONENT_NAME,
   slot: 'root',
 })<OwnerStateProps>(({ theme }) => {
-  const  { palette } = theme;
+  const  { palette, motion } = theme;
   return {
     textDecoration: 'none',
     display: 'block',
@@ -47,7 +41,9 @@ const NavItemRoot = styled('a', {
     fontVariationSettings: '"GRAD" 0, "opsz" 17',
     '&:hover': {
       [`& .${COMPONENT_NAME}-icon`]: {
+        backgroundSize: '15000%',
         backgroundColor: alpha(palette.onSurface.main, StateLayer.Hover),
+        backgroundImage: radialGradient(alpha(palette.onSurface.main, StateLayer.Hover)),
         '&.Mui-selected': {
           backgroundColor: getStateLayerColor(StateLayer.Hover, palette.secondaryContainer.main, palette.onSecondaryContainer.main)
         }
@@ -63,7 +59,35 @@ const NavItemRoot = styled('a', {
           backgroundColor: getStateLayerColor(StateLayer.Focus, palette.secondaryContainer.main, palette.onSecondaryContainer.main)
         }
       },
-    }
+    },
+    '&:active': {
+      [`& .${COMPONENT_NAME}-icon`]: {
+        transition: theme.transitions.create(
+          ['background-color', 'background-size'],
+          {
+            duration: 0,
+            easing: motion.easing.linear
+          },
+        ),
+        backgroundSize: '100%',
+        backgroundColor: alpha(palette.onSurface.main, StateLayer.Press),
+        '&.Mui-selected': {
+          backgroundColor: getStateLayerColor(StateLayer.Press, palette.secondaryContainer.main, palette.onSecondaryContainer.main)
+        }
+      },
+    },
+    variants: [
+      {
+        props: {
+          buttonStyle: true,
+        },
+        style: {
+          cursor: 'pointer',
+          backgroundColor: 'transparent',
+          border: 'none',
+        },
+      },
+    ]
   };
 });
 
@@ -89,7 +113,7 @@ const NavItemIcon = styled('span', {
   name: COMPONENT_NAME,
   slot: 'icon',
 })<OwnerStateProps>(({ theme }) => {
-  const  { palette, shape } = theme;
+  const  { palette, shape, motion } = theme;
   return {
     display: 'flex',
     position: 'relative',
@@ -103,6 +127,14 @@ const NavItemIcon = styled('span', {
     borderRadius: shape.corner.large.all,
     color: palette.onSurfaceVariant.main,
     backgroundColor: 'transparent',
+    backgroundPosition: 'center',
+    transition: theme.transitions.create(
+      ['background-color', 'background-size'],
+      {
+        duration: motion.duration.long4,
+        easing: motion.easing.emphasized.default
+      },
+    ),
     '&.Mui-selected': {
       color: palette.onSecondaryContainer.main,
       backgroundColor: palette.secondaryContainer.main,
@@ -116,20 +148,24 @@ export const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
     const { label,
       selected = false,
       component = 'a',
+      onClick = simpleMethod,
       children,
       ...other } = props;
 
+    const finalComponent = component === 'a' && (!other.href && !other.to) ? 'button': component;
+
     const ownerState: NavItemOwnerState = {
+      buttonStyle: finalComponent === 'button',
+      component,
       ...props
     }
-
-    const finalComponent = component === 'a' && (!other.href && !other.to) ? 'button': component;
 
     return (
       <NavItemRoot ref={ref}
                    as={finalComponent}
                    className={`${COMPONENT_NAME}-root${selected ? ' Mui-selected': ''}`}
                    ownerState={ownerState}
+                   onClick={onClick}
                    href={other.href || other.to}
                    {...other}>
         <NavItemIcon
@@ -145,23 +181,6 @@ export const NavItem = forwardRef<HTMLAnchorElement, NavItemProps>(
           </NavItemLabel>
         }
       </NavItemRoot>
-    )
-  }
-);
-
-export const NavButtonItem = forwardRef<HTMLButtonElement, NavItemProps>(
-  function NavItem(inProps, ref) {
-    const props = useThemeProps({ props: inProps, name: COMPONENT_NAME });
-    const { ...other } = props;
-    const ownerState: NavItemOwnerState = {
-      ...props,
-    }
-
-    return (
-      <NavItemButtonRoot ref={ref}
-                   ownerState={ownerState}
-                   {...other}>
-      </NavItemButtonRoot>
     )
   }
 );

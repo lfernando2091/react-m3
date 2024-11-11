@@ -5,9 +5,15 @@ import TextsmsIcon from '@mui/icons-material/Textsms';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import PhoneIcon from '@mui/icons-material/Phone';
 import TelegramIcon from '@mui/icons-material/Telegram';
+import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import { Link } from 'react-router-dom';
 
 export const NavigationRailSection = () => {
+
+  const onClickNav = () => {
+
+  }
+
   return (
     <Stack spacing={3}>
       <Typography variant="h6" fontWeight="bold">
@@ -27,10 +33,13 @@ export const NavigationRailSection = () => {
           <NavItem label="Mic" href="/">
             <HeadsetMicIcon/>
           </NavItem>
-          <NavItem label="Phone">
+          <NavItem label="Forward">
+            <ForwardToInboxIcon/>
+          </NavItem>
+          <NavItem label="Phone" onClick={onClickNav}>
             <PhoneIcon/>
           </NavItem>
-          <NavItem label="Telegram">
+          <NavItem label="Telegram" onClick={onClickNav}>
             <TelegramIcon/>
           </NavItem>
         </NavigationRail>
