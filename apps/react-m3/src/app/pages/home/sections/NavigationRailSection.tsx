@@ -1,17 +1,24 @@
 import { Stack, Typography } from '@mui/material';
-import { NavigationRail, NavItem } from '@react-m3/m3';
+import { NavigationRail, NavItem, SwitchContainer } from '@react-m3/m3';
 import EditIcon from '@mui/icons-material/EditTwoTone';
 import TextsmsIcon from '@mui/icons-material/Textsms';
 import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import PhoneIcon from '@mui/icons-material/Phone';
-import TelegramIcon from '@mui/icons-material/Telegram';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import LightModeIcon from '@mui/icons-material/LightMode';
 import ForwardToInboxIcon from '@mui/icons-material/ForwardToInbox';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export const NavigationRailSection = () => {
+  const [toggle, setToggle ] = useState(true);
 
   const onClickNav = () => {
 
+  }
+
+  const onToggle = () => {
+    setToggle(!toggle);
   }
 
   return (
@@ -20,10 +27,15 @@ export const NavigationRailSection = () => {
         Navigation Rail
       </Typography>
       <Stack direction="column" sx={{ height: '600px' }}>
-        {/*menuIcon*/}
-        {/*actionButton*/}
         <NavigationRail
-          bottomContent={<div>Bottom Content</div>}
+          bottomContent={<div style={{ display: 'flex', justifyContent: 'center' }}>
+            <SwitchContainer
+              on={toggle}
+              onClick={onToggle}
+              secondaryComponent={<LightModeIcon/>}>
+              <BedtimeIcon/>
+            </SwitchContainer>
+          </div>}
           actionButtonIcon={<EditIcon/>}
           menuIcon
         >
@@ -38,9 +50,6 @@ export const NavigationRailSection = () => {
           </NavItem>
           <NavItem label="Phone" onClick={onClickNav}>
             <PhoneIcon/>
-          </NavItem>
-          <NavItem label="Telegram" onClick={onClickNav}>
-            <TelegramIcon/>
           </NavItem>
         </NavigationRail>
       </Stack>

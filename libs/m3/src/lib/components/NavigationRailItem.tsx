@@ -50,6 +50,7 @@ const NavItemRoot = styled('a', {
       },
       [`& .${COMPONENT_NAME}-label`]: {
         fontVariationSettings: '"GRAD" 50',
+        fontWeight: 'bold'
       }
     },
     '&:focus': {
@@ -76,6 +77,14 @@ const NavItemRoot = styled('a', {
         }
       },
     },
+    '&:focus-visible': {
+      margin: '-4px auto 12px',
+      border: '2px solid',
+      borderColor: palette.onSurface.main,
+      borderRadius: '18px',
+      outline: 0,
+      boxShadow: `inset 0 0 0 2px ${palette.surface.main}`,
+    },
     variants: [
       {
         props: {
@@ -95,13 +104,22 @@ const NavItemLabel = styled('div', {
   name: COMPONENT_NAME,
   slot: 'label',
 })<OwnerStateProps>(({ theme }) => {
-  const  { palette } = theme;
+  const  { palette, motion } = theme;
   return {
     ...theme.typography.button,
     textTransform: 'none',
     marginBottom: '4px',
     textAlign: 'center',
     color: palette.onSurfaceVariant.main,
+    pointerEvents: 'none',
+    userSelect: 'none',
+    transition: theme.transitions.create(
+      ['font-weight'],
+      {
+        duration: motion.duration.short2,
+        easing: motion.easing.emphasized.default
+      },
+    ),
     '&.Mui-selected': {
       color: palette.onSurface.main,
       fontWeight: 'bold'

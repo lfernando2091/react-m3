@@ -35,3 +35,6 @@ export { getNavigationRail } from './NavigationRailStyle';
 
 export { NavItem } from './NavigationRailItem';
 export type { NavItemProps } from './NavigationRailItem';
+
+export { SwitchContainer } from './SwitchContainer/Container';
+export type { SwitchContainerProps } from './SwitchContainer/Container';
