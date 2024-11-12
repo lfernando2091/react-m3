@@ -39,6 +39,17 @@ const NavItemRoot = styled('a', {
     padding: '2px',
     color: palette.onSurfaceVariant.main,
     fontVariationSettings: '"GRAD" 0, "opsz" 17',
+
+    WebkitTapHighlightColor: 'transparent',
+    MozAppearance: 'none', // Reset
+    WebkitAppearance: 'none', // Reset
+    '&::-moz-focus-inner': {
+      borderStyle: 'none', // Remove Firefox dotted outline.
+    },
+    '@media print': {
+      colorAdjust: 'exact',
+    },
+
     '&:hover': {
       [`& .${COMPONENT_NAME}-icon`]: {
         backgroundSize: '15000%',

@@ -43,6 +43,17 @@ const SwitchContainerRoot = styled('div', {
     cursor: 'pointer',
     userSelect: 'none',
     overflow: 'hidden',
+
+    WebkitTapHighlightColor: 'transparent',
+    MozAppearance: 'none', // Reset
+    WebkitAppearance: 'none', // Reset
+    '&::-moz-focus-inner': {
+      borderStyle: 'none', // Remove Firefox dotted outline.
+    },
+    '@media print': {
+      colorAdjust: 'exact',
+    },
+
     '&:hover': {
       backgroundColor: alpha(palette.onSurfaceVariant.main, StateLayer.Hover),
     },
