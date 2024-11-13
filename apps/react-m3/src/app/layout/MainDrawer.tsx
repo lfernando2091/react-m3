@@ -1,5 +1,4 @@
 import {
-  Box,
   Drawer,
   DrawerProps,
   List,
@@ -32,6 +31,7 @@ import NavigationIcon from '@mui/icons-material/Navigation';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { NavigationRail, NavItem } from '@react-m3/m3';
 
 const categories = [
   {
@@ -135,7 +135,6 @@ export const MainDrawer = (props: DrawerProps) => {
     setSelectedIndex(location.pathname.replace('/', ''));
   }, [location.pathname])
 
-
   const handleListItemClick = (index: string) => {
     setSelectedIndex(index);
     onClose?.({}, 'backdropClick');
@@ -152,7 +151,7 @@ export const MainDrawer = (props: DrawerProps) => {
         <ListItem divider>
           <ListItemButton component={Link} to='/' selected={selectedIndex === ''} onClick={() => handleListItemClick('')}>
             <ListItemIcon>
-              {selectedIndex === 'Home' ? <HomeIcon /> : <HomeIconOutlined />}
+              {selectedIndex === '' ? <HomeIcon /> : <HomeIconOutlined />}
             </ListItemIcon>
             <ListItemText>Home</ListItemText>
             100+
@@ -173,4 +172,43 @@ export const MainDrawer = (props: DrawerProps) => {
         ))}
     </Drawer>
   )
+}
+
+export const MainNavRail = () => {
+  const location = useLocation();
+  const [selectedIndex, setSelectedIndex] = useState(location.pathname.replace('/', ''));
+
+  useEffect(() => {
+    setSelectedIndex(location.pathname.replace('/', ''));
+  }, [location.pathname]);
+
+  const handleListItemClick = (index: string) => {
+    setSelectedIndex(index);
+  };
+
+  return (<div style={{ position: 'fixed', height: '100%' }}>
+    <NavigationRail menuIcon>
+      <NavItem label="Home"
+               component={Link}
+               to="/"
+               selected={selectedIndex === ''}
+               onClick={() => handleListItemClick('')}>
+        {selectedIndex === '' ? <HomeIcon /> : <HomeIconOutlined />}
+      </NavItem>
+      {categories.map(({ id, children }) => (
+        <div key={id}>
+          {children.map(({ id: childId, icon, link }) => (
+            <NavItem key={childId}
+                     label={childId}
+                     component={Link}
+                     to={link}
+                     selected={selectedIndex === childId}
+                     onClick={() => handleListItemClick(childId)}>
+              {icon}
+            </NavItem>
+          ))}
+        </div>
+      ))}
+    </NavigationRail>
+  </div>)
 }

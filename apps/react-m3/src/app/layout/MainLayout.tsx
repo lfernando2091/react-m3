@@ -2,17 +2,18 @@ import { Outlet } from 'react-router-dom';
 import { Box, SxProps, useMediaQuery, useTheme } from '@mui/material';
 import { MainAppBar } from './MainAppBar';
 import { MainContainer } from './MainContainer';
-import { MainDrawer } from './MainDrawer';
+import { MainDrawer, MainNavRail } from './MainDrawer';
 import { useAppContext } from '../@core/AppContext';
 
 const drawerWidth = 360;
+const navRailWidth = 88;
 
 const rootStyles: SxProps = {
   display: 'flex',
   minHeight: '100vh',
 };
 const navStyles: SxProps = {
-  width: { md: drawerWidth },
+  width: { lg: drawerWidth, md: navRailWidth, sm: 0, xs: 0 },
   flexShrink: { md: 0 },
 };
 
@@ -28,6 +29,7 @@ const containerStyles: SxProps = {
 
 export const MainLayout = () => {
   const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up('lg'));
   const isSmUp = useMediaQuery(theme.breakpoints.up('md'));
   const { openDrawer, switchDrawer } = useAppContext();
 
@@ -43,9 +45,10 @@ export const MainLayout = () => {
         open={openDrawer}
         onClose={handleDrawerToggle}
       />}
+      {!isMdUp && isSmUp && <MainNavRail/>}
       <MainDrawer variant="permanent"
                   PaperProps={{ style: { width: drawerWidth } }}
-                  sx={{ display: { md: 'block', sm: 'none', xs: 'none' } }} />
+                  sx={{ display: { lg: 'block', md: 'none', sm: 'none', xs: 'none' } }} />
     </Box>
     <Box sx={mainStyles}>
       <Box sx={containerStyles}>
