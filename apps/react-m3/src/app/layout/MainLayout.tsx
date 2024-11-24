@@ -39,7 +39,7 @@ export const MainLayout = () => {
 
   return (<Box sx={rootStyles}>
     <Box component="nav" sx={navStyles}>
-      {!isSmUp && <MainDrawer
+      {!isMdUp && <MainDrawer
         PaperProps={{ style: { width: drawerWidth } }}
         variant="temporary"
         open={openDrawer}

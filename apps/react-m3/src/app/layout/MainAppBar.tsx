@@ -3,7 +3,6 @@ import { IconButton } from '@react-m3/m3';
 import MenuIcon from '@mui/icons-material/MenuTwoTone';
 import Grid from '@mui/material/Grid2';
 import { useAppContext } from '../@core/AppContext';
-import ColorIcon from '@mui/icons-material/Shuffle';
 
 const DIGITS = '0123456789ABCDEF';
 

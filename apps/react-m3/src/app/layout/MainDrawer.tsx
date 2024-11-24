@@ -31,7 +31,10 @@ import NavigationIcon from '@mui/icons-material/Navigation';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import { NavigationRail, NavItem } from '@react-m3/m3';
+import { NavigationRail, NavItem, SwitchContainer } from '@react-m3/m3';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import { useAppContext } from '../@core/AppContext';
 
 const categories = [
   {
@@ -177,6 +180,7 @@ export const MainDrawer = (props: DrawerProps) => {
 export const MainNavRail = () => {
   const location = useLocation();
   const [selectedIndex, setSelectedIndex] = useState(location.pathname.replace('/', ''));
+  const { lightMode, switchThemeMode, switchDrawer } = useAppContext();
 
   useEffect(() => {
     setSelectedIndex(location.pathname.replace('/', ''));
@@ -186,8 +190,21 @@ export const MainNavRail = () => {
     setSelectedIndex(index);
   };
 
+  const onToggle = () => {
+    switchThemeMode();
+  }
+
   return (<div style={{ position: 'fixed', height: '100%' }}>
-    <NavigationRail menuIcon>
+    <NavigationRail menuIcon
+                    menuIconOnClick={switchDrawer}
+                    bottomContent={<div style={{ display: 'flex', justifyContent: 'center' }}>
+      <SwitchContainer
+        on={lightMode}
+        onClick={onToggle}
+        secondaryComponent={<LightModeIcon/>}>
+        <BedtimeIcon/>
+      </SwitchContainer>
+    </div>}>
       <NavItem label="Home"
                component={Link}
                to="/"
