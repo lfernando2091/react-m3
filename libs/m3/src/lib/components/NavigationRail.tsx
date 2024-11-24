@@ -35,6 +35,7 @@ const NavigationRailRoot = styled('div', {
 })<OwnerStateProps>(({ theme }) => {
   const  { palette } = theme;
   return {
+    zIndex: 1101,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

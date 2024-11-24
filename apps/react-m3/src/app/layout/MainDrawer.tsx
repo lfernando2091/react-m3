@@ -194,7 +194,7 @@ export const MainNavRail = () => {
     switchThemeMode();
   }
 
-  return (<div style={{ position: 'fixed', height: '100%' }}>
+  return (<div style={{ position: 'fixed', height: '100%', zIndex: 1101 }}>
     <NavigationRail menuIcon
                     menuIconOnClick={switchDrawer}
                     bottomContent={<div style={{ display: 'flex', justifyContent: 'center' }}>

@@ -85,6 +85,16 @@ const MainMenu: MenuItem[] = [
     title: "Snackbar",
     description: "Snackbar component",
     url: "/snackbar"
+  },
+  {
+    title: "Menu",
+    description: "Menu component",
+    url: "/menu"
+  },
+  {
+    title: "Navigation Rail",
+    description: "Navigation rail component",
+    url: "/navigation-rail"
   }
 ]
 
