@@ -28,6 +28,9 @@ import ContactSupportIcon from '@mui/icons-material/ContactSupport';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
 import StickyNote2Icon from '@mui/icons-material/StickyNote2';
 import NavigationIcon from '@mui/icons-material/Navigation';
+import BackupTableIcon from '@mui/icons-material/BackupTable';
+import PaletteIcon from '@mui/icons-material/Palette';
+import FormatSizeIcon from '@mui/icons-material/FormatSize';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -40,6 +43,16 @@ const categories = [
   {
     id: 'Components',
     children: [
+      {
+        id: 'color',
+        icon: <PaletteIcon />,
+        link: '/color'
+      },
+      {
+        id: 'typography',
+        icon: <FormatSizeIcon />,
+        link: '/typography'
+      },
       {
         id: 'buttons',
         icon: <KeyboardCommandKeyIcon />,
@@ -124,6 +137,11 @@ const categories = [
         id: 'navigation-rail',
         icon: <NavigationIcon />,
         link: '/navigation-rail'
+      },
+      {
+        id: 'table',
+        icon: <BackupTableIcon />,
+        link: '/table'
       }
     ],
   },

@@ -9,7 +9,7 @@ export type AppStateProviderProps = {
 
 export const AppStateProvider = ({ children }: AppStateProviderProps) => {
   const [openDrawer, setOpenDrawer] = useState(false);
-  const [themeColor, setThemeColor] = useState("#006875");
+  const [themeColor, setThemeColor] = useState("#086591");
   const [lightMode, setLightMode] = useState(true);
 
   const switchDrawer = () => {

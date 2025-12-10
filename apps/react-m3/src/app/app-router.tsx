@@ -18,6 +18,9 @@ import { DialogPage } from './pages/dialog/DialogPage';
 import { SnackbarPage } from './pages/snackbar/SnackbarPage';
 import { MenuPage } from './pages/menu/MenuPage';
 import { NavigationRailPage } from './pages/navigation-rail/NavigationRailPage';
+import { TablePage } from './pages/table/TablePage';
+import { ColorPage } from './pages/color/ColorPage';
+import { TypographyPage } from './pages/typography/TypographyPage';
 
 export const Router = () => {
   return (
@@ -41,6 +44,9 @@ export const Router = () => {
         <Route path="snackbar" element={<SnackbarPage/>}/>
         <Route path="menu" element={<MenuPage/>}/>
         <Route path="navigation-rail" element={<NavigationRailPage/>}/>
+        <Route path="table" element={<TablePage/>}/>
+        <Route path="color" element={<ColorPage/>}/>
+        <Route path="typography" element={<TypographyPage/>}/>
         <Route path="empty" element={<EmptyPage/>}/>
       </Route>
     </Routes>

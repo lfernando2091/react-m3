@@ -12,6 +12,11 @@ type MenuItem = {
 
 const MainMenu: MenuItem[] = [
   {
+    title: "Colors",
+    description: "Colors component",
+    url: "/color"
+  },
+  {
     title: "Buttons",
     description: "Standard buttons, Icon buttons, Toggle buttons, Segmented buttons, Floating Actions buttons",
     url: "/buttons"
@@ -95,6 +100,16 @@ const MainMenu: MenuItem[] = [
     title: "Navigation Rail",
     description: "Navigation rail component",
     url: "/navigation-rail"
+  },
+  {
+    title: "Table",
+    description: "Table component",
+    url: "/table"
+  },
+  {
+    title: "Typography",
+    description: "Typography component",
+    url: "/typography"
   }
 ]
 

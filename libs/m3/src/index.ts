@@ -11,3 +11,4 @@ export { ThemeHandler } from "./lib/context/ThemeHandler";
 
 export { NavigationRail, NavItem, SwitchContainer } from "./lib/components";
 export type { NavItemProps, SwitchContainerProps } from "./lib/components";
+export type { M3Palette } from "./lib/styles/createTheme";

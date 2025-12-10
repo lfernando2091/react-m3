@@ -28,6 +28,7 @@ export { getDialog } from './Dialog';
 export { getDivider } from './Divider';
 export { getSnackbar } from './Snackbar';
 export { getMenu } from './Menu';
+export { getTable } from './Table';
 
 export { NavigationRail } from './NavigationRail';
 export type { NavigationRailProps } from './NavigationRail';
