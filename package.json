@@ -14,7 +14,7 @@
     "test:m3": "npx nx test m3",
     "lint:m3": "npx nx lint m3",
 
-    "publish": "npm publish --access public"
+    "publish": "cd ./dist/libs/m3 && npm publish --access public"
   },
   "private": false,
   "dependencies": {
