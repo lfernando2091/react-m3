@@ -24,13 +24,25 @@ import {
   getPaper,
   getTabs,
   getDialog,
-  getDivider
+  getDivider,
+  getSnackbar,
+  getMenu,
+  getNavigationRail,
+  getTable,
+  getTypographyBaseLine,
+  getChip
 } from '../components';
 
-type M3Components = { components: Theme['components'] };
+type M3Components = {
+  typography: Theme['typography'],
+  components: Theme['components']
+};
 
 export const getMUIComponents = (theme: Theme): M3Components => {
   return {
+    typography: {
+      ...getTypographyBaseLine()
+    },
     components: {
       ...getCssBaseline(theme),
       ...getButton(theme),
@@ -57,6 +69,11 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getTabs(theme),
       ...getDialog(theme),
       ...getDivider(theme),
+      ...getSnackbar(theme),
+      ...getMenu(theme),
+      ...getNavigationRail(theme),
+      ...getTable(theme),
+      ...getChip(theme)
     }
   } as M3Components
 }

@@ -12,6 +12,11 @@ type MenuItem = {
 
 const MainMenu: MenuItem[] = [
   {
+    title: "Colors",
+    description: "Colors component",
+    url: "/color"
+  },
+  {
     title: "Buttons",
     description: "Standard buttons, Icon buttons, Toggle buttons, Segmented buttons, Floating Actions buttons",
     url: "/buttons"
@@ -75,6 +80,41 @@ const MainMenu: MenuItem[] = [
     title: "Divider",
     description: "Divider component",
     url: "/divider"
+  },
+  {
+    title: "Dialog",
+    description: "Dialog component",
+    url: "/dialog"
+  },
+  {
+    title: "Snackbar",
+    description: "Snackbar component",
+    url: "/snackbar"
+  },
+  {
+    title: "Menu",
+    description: "Menu component",
+    url: "/menu"
+  },
+  {
+    title: "Navigation Rail",
+    description: "Navigation rail component",
+    url: "/navigation-rail"
+  },
+  {
+    title: "Table",
+    description: "Table component",
+    url: "/table"
+  },
+  {
+    title: "Typography",
+    description: "Typography component",
+    url: "/typography"
+  },
+  {
+    title: "Chips",
+    description: "Chips component",
+    url: "/chips"
   }
 ]
 
@@ -124,7 +164,7 @@ export const HomePage = () => {
     </Typography >
     <Grid container spacing={2}>
       {MainMenu.map((item: MenuItem, i: number) => (
-        <Grid size={4} key={i}><MenuItemCard data={item}/></Grid>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 6, xl: 4 }} key={i}><MenuItemCard data={item}/></Grid>
       ))}
     </Grid>
   </>)

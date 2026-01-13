@@ -14,6 +14,14 @@ import { AccordionPage } from './pages/accordion/AccordionPage';
 import { AlertPage } from './pages/alert/AlertPage';
 import { TabsPage } from './pages/tabs/TabsPage';
 import { DividerPage } from './pages/divider/DividerPage';
+import { DialogPage } from './pages/dialog/DialogPage';
+import { SnackbarPage } from './pages/snackbar/SnackbarPage';
+import { MenuPage } from './pages/menu/MenuPage';
+import { NavigationRailPage } from './pages/navigation-rail/NavigationRailPage';
+import { TablePage } from './pages/table/TablePage';
+import { ColorPage } from './pages/color/ColorPage';
+import { TypographyPage } from './pages/typography/TypographyPage';
+import { ChipsPage } from './pages/chips/ChipsPage';
 
 export const Router = () => {
   return (
@@ -33,6 +41,14 @@ export const Router = () => {
         <Route path="alert" element={<AlertPage/>}/>
         <Route path="tabs" element={<TabsPage/>}/>
         <Route path="divider" element={<DividerPage/>}/>
+        <Route path="dialog" element={<DialogPage/>}/>
+        <Route path="snackbar" element={<SnackbarPage/>}/>
+        <Route path="menu" element={<MenuPage/>}/>
+        <Route path="navigation-rail" element={<NavigationRailPage/>}/>
+        <Route path="table" element={<TablePage/>}/>
+        <Route path="color" element={<ColorPage/>}/>
+        <Route path="typography" element={<TypographyPage/>}/>
+        <Route path="chips" element={<ChipsPage/>}/>
         <Route path="empty" element={<EmptyPage/>}/>
       </Route>
     </Routes>

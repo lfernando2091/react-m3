@@ -34,5 +34,14 @@ export const ButtonSection = () => {
       <Button disabled startIcon={<NotificationsActiveIcon />} variant="outlined">Outlined</Button>
       <Button disabled startIcon={<NotificationsActiveIcon />} variant="text">Text</Button>
     </Stack>
+    <Typography variant="h6" fontWeight="bold">
+      Buttons Inverse color
+    </Typography>
+    <Stack direction='row' spacing={2} flexWrap={'wrap'} sx={{ backgroundColor: 'inverseSurface.main', padding: 2 }}>
+      <Button variant="text" color="inverse">Text Inverse</Button>
+      <Button startIcon={<NotificationsActiveIcon />} variant="text" color="inverse">Text Inverse</Button>
+      <Button endIcon={<NotificationsActiveIcon />} variant="text" color="inverse">Text Inverse</Button>
+      <Button disabled startIcon={<NotificationsActiveIcon />} variant="text" color="inverse">Text</Button>
+    </Stack>
   </Stack>)
 }

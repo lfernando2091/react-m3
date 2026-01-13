@@ -5,6 +5,7 @@ export enum StateLayer {
   Focus = 0.12,
   Press = 0.12,
   Drag = 0.16,
+  Disable = 0.38,
 }
 
 export const getStateLayerColor = (state: StateLayer, containerColor: string, contentColor: string): string => {

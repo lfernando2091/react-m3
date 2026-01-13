@@ -1,5 +1,4 @@
 import {
-  Box,
   Drawer,
   DrawerProps,
   List,
@@ -12,7 +11,6 @@ import {
 
 import HomeIcon from '@mui/icons-material/Home';
 import HomeIconOutlined from '@mui/icons-material/HomeOutlined';
-import NoteIcon from '@mui/icons-material/Note';
 import KeyboardCommandKeyIcon from '@mui/icons-material/KeyboardCommandKey';
 import ToggleOffIcon from '@mui/icons-material/ToggleOff';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
@@ -26,14 +24,36 @@ import ExpandIcon from '@mui/icons-material/Expand';
 import MessageIcon from '@mui/icons-material/Message';
 import TabIcon from '@mui/icons-material/Tab';
 import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
+import ContactSupportIcon from '@mui/icons-material/ContactSupport';
+import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
+import StickyNote2Icon from '@mui/icons-material/StickyNote2';
+import NavigationIcon from '@mui/icons-material/Navigation';
+import BackupTableIcon from '@mui/icons-material/BackupTable';
+import PaletteIcon from '@mui/icons-material/Palette';
+import FormatSizeIcon from '@mui/icons-material/FormatSize';
+import LabelIcon from '@mui/icons-material/Label';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
+import { NavigationRail, NavItem, SwitchContainer } from '@react-m3/m3';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import BedtimeIcon from '@mui/icons-material/Bedtime';
+import { useAppContext } from '../@core/AppContext';
 
 const categories = [
   {
     id: 'Components',
     children: [
+      {
+        id: 'color',
+        icon: <PaletteIcon />,
+        link: '/color'
+      },
+      {
+        id: 'typography',
+        icon: <FormatSizeIcon />,
+        link: '/typography'
+      },
       {
         id: 'buttons',
         icon: <KeyboardCommandKeyIcon />,
@@ -98,6 +118,36 @@ const categories = [
         id: 'divider',
         icon: <HorizontalRuleIcon />,
         link: '/divider'
+      },
+      {
+        id: 'dialog',
+        icon: <ContactSupportIcon />,
+        link: '/dialog'
+      },
+      {
+        id: 'snackbar',
+        icon: <NotificationsActiveIcon />,
+        link: '/snackbar'
+      },
+      {
+        id: 'menu',
+        icon: <StickyNote2Icon />,
+        link: '/menu'
+      },
+      {
+        id: 'navigation-rail',
+        icon: <NavigationIcon />,
+        link: '/navigation-rail'
+      },
+      {
+        id: 'table',
+        icon: <BackupTableIcon />,
+        link: '/table'
+      },
+      {
+        id: 'chips',
+        icon: <LabelIcon />,
+        link: '/chips'
       }
     ],
   },
@@ -111,7 +161,6 @@ export const MainDrawer = (props: DrawerProps) => {
   useEffect(() => {
     setSelectedIndex(location.pathname.replace('/', ''));
   }, [location.pathname])
-
 
   const handleListItemClick = (index: string) => {
     setSelectedIndex(index);
@@ -129,7 +178,7 @@ export const MainDrawer = (props: DrawerProps) => {
         <ListItem divider>
           <ListItemButton component={Link} to='/' selected={selectedIndex === ''} onClick={() => handleListItemClick('')}>
             <ListItemIcon>
-              {selectedIndex === 'Home' ? <HomeIcon /> : <HomeIconOutlined />}
+              {selectedIndex === '' ? <HomeIcon /> : <HomeIconOutlined />}
             </ListItemIcon>
             <ListItemText>Home</ListItemText>
             100+
@@ -150,4 +199,57 @@ export const MainDrawer = (props: DrawerProps) => {
         ))}
     </Drawer>
   )
+}
+
+export const MainNavRail = () => {
+  const location = useLocation();
+  const [selectedIndex, setSelectedIndex] = useState(location.pathname.replace('/', ''));
+  const { lightMode, switchThemeMode, switchDrawer } = useAppContext();
+
+  useEffect(() => {
+    setSelectedIndex(location.pathname.replace('/', ''));
+  }, [location.pathname]);
+
+  const handleListItemClick = (index: string) => {
+    setSelectedIndex(index);
+  };
+
+  const onToggle = () => {
+    switchThemeMode();
+  }
+
+  return (<div style={{ position: 'fixed', height: '100%', zIndex: 1101 }}>
+    <NavigationRail menuIcon
+                    menuIconOnClick={switchDrawer}
+                    bottomContent={<div style={{ display: 'flex', justifyContent: 'center' }}>
+      <SwitchContainer
+        on={lightMode}
+        onClick={onToggle}
+        secondaryComponent={<LightModeIcon/>}>
+        <BedtimeIcon/>
+      </SwitchContainer>
+    </div>}>
+      <NavItem label="Home"
+               component={Link}
+               to="/"
+               selected={selectedIndex === ''}
+               onClick={() => handleListItemClick('')}>
+        {selectedIndex === '' ? <HomeIcon /> : <HomeIconOutlined />}
+      </NavItem>
+      {categories.map(({ id, children }) => (
+        <div key={id}>
+          {children.map(({ id: childId, icon, link }) => (
+            <NavItem key={childId}
+                     label={childId}
+                     component={Link}
+                     to={link}
+                     selected={selectedIndex === childId}
+                     onClick={() => handleListItemClick(childId)}>
+              {icon}
+            </NavItem>
+          ))}
+        </div>
+      ))}
+    </NavigationRail>
+  </div>)
 }
