@@ -29,8 +29,9 @@ import {
   getMenu,
   getNavigationRail,
   getTable,
+  getTypographyBaseLine,
+  getChip
 } from '../components';
-import { getTypographyBaseLine } from '../components/Typography';
 
 type M3Components = {
   typography: Theme['typography'],
@@ -72,6 +73,7 @@ export const getMUIComponents = (theme: Theme): M3Components => {
       ...getMenu(theme),
       ...getNavigationRail(theme),
       ...getTable(theme),
+      ...getChip(theme)
     }
   } as M3Components
 }

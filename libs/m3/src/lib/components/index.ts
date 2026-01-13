@@ -29,6 +29,7 @@ export { getDivider } from './Divider';
 export { getSnackbar } from './Snackbar';
 export { getMenu } from './Menu';
 export { getTable } from './Table';
+export { Chip, getChip } from './Chips';
 
 export { NavigationRail } from './NavigationRail';
 export type { NavigationRailProps } from './NavigationRail';
@@ -39,3 +40,4 @@ export type { NavItemProps } from './NavigationRailItem';
 
 export { SwitchContainer } from './SwitchContainer/Container';
 export type { SwitchContainerProps } from './SwitchContainer/Container';
+export { getTypographyBaseLine } from './Typography';

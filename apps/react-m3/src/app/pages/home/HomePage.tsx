@@ -110,6 +110,11 @@ const MainMenu: MenuItem[] = [
     title: "Typography",
     description: "Typography component",
     url: "/typography"
+  },
+  {
+    title: "Chips",
+    description: "Chips component",
+    url: "/chips"
   }
 ]
 

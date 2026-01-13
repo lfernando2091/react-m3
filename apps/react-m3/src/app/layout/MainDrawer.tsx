@@ -31,6 +31,7 @@ import NavigationIcon from '@mui/icons-material/Navigation';
 import BackupTableIcon from '@mui/icons-material/BackupTable';
 import PaletteIcon from '@mui/icons-material/Palette';
 import FormatSizeIcon from '@mui/icons-material/FormatSize';
+import LabelIcon from '@mui/icons-material/Label';
 
 import { useEffect, useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -142,6 +143,11 @@ const categories = [
         id: 'table',
         icon: <BackupTableIcon />,
         link: '/table'
+      },
+      {
+        id: 'chips',
+        icon: <LabelIcon />,
+        link: '/chips'
       }
     ],
   },

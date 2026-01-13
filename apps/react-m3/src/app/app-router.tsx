@@ -21,6 +21,7 @@ import { NavigationRailPage } from './pages/navigation-rail/NavigationRailPage';
 import { TablePage } from './pages/table/TablePage';
 import { ColorPage } from './pages/color/ColorPage';
 import { TypographyPage } from './pages/typography/TypographyPage';
+import { ChipsPage } from './pages/chips/ChipsPage';
 
 export const Router = () => {
   return (
@@ -47,6 +48,7 @@ export const Router = () => {
         <Route path="table" element={<TablePage/>}/>
         <Route path="color" element={<ColorPage/>}/>
         <Route path="typography" element={<TypographyPage/>}/>
+        <Route path="chips" element={<ChipsPage/>}/>
         <Route path="empty" element={<EmptyPage/>}/>
       </Route>
     </Routes>
